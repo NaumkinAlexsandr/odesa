@@ -44,12 +44,15 @@ export default function SliderContent({
     }
   }, [prevElId, nextElId]);
 
-  const containerClasses = `relative ${floatDirection} mx-6 w-[90%] p-2 md:w-1/2 lg:w-1/2`;
+  const containerClasses = `relative ${floatDirection} mx-6 w-[100%] p-2 md:w-1/2 lg:w-1/2`;
   const opacity = `opacity-50 transition-opacity duration-300 hover:opacity-100`;
 
   return (
     <div className={containerClasses}>
-      <div className="relative mx-auto max-w-full overflow-hidden rounded-xl">
+      <div
+        className="relative mx-auto overflow-hidden rounded-xl"
+        style={{ width: "calc(100% - 60px)" }}
+      >
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -113,7 +116,7 @@ export default function SliderContent({
 
       <div
         id={swiperId + "-prev"}
-        className={`absolute top-1/2 left-[-30px] z-5 -translate-y-1/2 cursor-pointer p-2 ${opacity}`}
+        className={`absolute top-1/2 -left-1.5 z-5 -translate-y-1/2 cursor-pointer p-2 ${opacity}`}
       >
         <Image
           src={left}
@@ -125,7 +128,7 @@ export default function SliderContent({
 
       <div
         id={swiperId + "-next"}
-        className={`absolute top-1/2 right-[-30px] z-5 -translate-y-1/2 cursor-pointer p-2 ${opacity}`}
+        className={`absolute top-1/2 -right-1.5 z-5 -translate-y-1/2 cursor-pointer p-2 ${opacity}`}
       >
         <Image
           src={right}

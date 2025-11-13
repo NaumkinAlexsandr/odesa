@@ -47,6 +47,7 @@ export default function WeatherDisplay() {
     return (
       <div>
         <p className={p}>{air.nodata}</p>
+        <p className={`${p} text-red-500`}> {air.nodata} </p>
       </div>
     );
   }
@@ -164,12 +165,14 @@ export default function WeatherDisplay() {
   const aqiClass = getAqiClass(data.aqi);
   return (
     <>
-      <div className="flex w-[225px] flex-col gap-3 rounded-lg border border-gray-100 bg-white p-1 shadow-md">
+      <div className="flex w-[225px] flex-col gap-3 rounded-lg border border-gray-100 bg-white p-1 text-gray-900 shadow-md">
+        {/* Добавил text-gray-900 сюда */}
         <div className="flex flex-col gap-1 rounded-lg border border-gray-200 p-1">
           <div>
             {data.weatherIcon && (
               <Image src={data.weatherIcon} alt="Погодная иконка" />
             )}
+
             <div
               className={`flex h-[45px] w-full items-center justify-center p-1`}
             >
@@ -178,7 +181,9 @@ export default function WeatherDisplay() {
                 src={temp}
                 alt="Погодная иконка"
               />
-              <span className="text-[40px]">
+
+              <span className="text-[40px] font-extrabold text-gray-900">
+                {/* Добавил явный цвет и жирность */}
                 {data.temp ? `${Math.round(data.temp)} °C` : "N/A"}
               </span>
             </div>
@@ -192,6 +197,7 @@ export default function WeatherDisplay() {
               unit={weather.unit_2}
               indicator={weather.pressure}
             />
+
             <WeatherCard
               url={humidity}
               alt="humidity"
@@ -199,6 +205,7 @@ export default function WeatherDisplay() {
               unit={weather.unit_3}
               indicator={weather.humidity}
             />
+
             <WeatherCard
               url={clouds}
               alt="clouds"
@@ -206,6 +213,7 @@ export default function WeatherDisplay() {
               unit={weather.unit_3}
               indicator={weather.clouds}
             />
+
             {data.rain && (
               <WeatherCard
                 url={rain}
@@ -215,6 +223,7 @@ export default function WeatherDisplay() {
                 indicator={weather.rain}
               />
             )}
+
             {data.snow && (
               <WeatherCard
                 url={snow}
@@ -232,13 +241,22 @@ export default function WeatherDisplay() {
             <div
               className={`${aqiClass} flex h-[60px] w-[60px] items-center justify-center shadow-md`}
             >
-              <span className="text-3xl">AQI</span>
+              <span className="text-3xl text-white">AQI</span>
+              {/* Убедимся, что AQI белый/контрастный на цветном фоне */}
             </div>
+
             <div className="flex flex-col items-center justify-center">
-              <p className="text-center text-[14px]">{aqiIndex}</p>
-              <p className="text-center text-[14px] font-bold">{air.quality}</p>
+              <p className="text-center text-[14px] text-gray-700">
+                {aqiIndex}
+              </p>
+              {/* Явный цвет */}
+              <p className="text-center text-[14px] font-bold text-gray-900">
+                {air.quality}
+              </p>
+              {/* Явный цвет */}
             </div>
           </div>
+
           <div className="flex flex-row flex-wrap gap-1">
             <AQI
               numb={data.co}
@@ -247,6 +265,7 @@ export default function WeatherDisplay() {
               icon="CO"
               cardClass={getPollutantClass("co", data.co)}
             />
+
             <AQI
               numb={data.nh3}
               unit={air.unit}
@@ -255,6 +274,7 @@ export default function WeatherDisplay() {
               sub="3"
               cardClass={getPollutantClass("nh3", data.nh3)}
             />
+
             <AQI
               numb={data.no}
               unit={air.unit}
@@ -263,6 +283,7 @@ export default function WeatherDisplay() {
               sub=""
               cardClass={getPollutantClass("no", data.no)}
             />
+
             <AQI
               numb={data.no2}
               unit={air.unit}
@@ -271,6 +292,7 @@ export default function WeatherDisplay() {
               sub="2"
               cardClass={getPollutantClass("no2", data.no2)}
             />
+
             <AQI
               numb={data.o3}
               unit={air.unit}
@@ -279,6 +301,7 @@ export default function WeatherDisplay() {
               sub="3"
               cardClass={getPollutantClass("o3", data.o3)}
             />
+
             <AQI
               numb={data.pm2_5}
               unit={air.unit}
@@ -287,6 +310,7 @@ export default function WeatherDisplay() {
               sub="2.5"
               cardClass={getPollutantClass("pm2_5", data.pm2_5)}
             />
+
             <AQI
               numb={data.pm10}
               unit={air.unit}
@@ -295,6 +319,7 @@ export default function WeatherDisplay() {
               sub="10"
               cardClass={getPollutantClass("pm10", data.pm10)}
             />
+
             <AQI
               numb={data.so2}
               unit={air.unit}

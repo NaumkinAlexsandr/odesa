@@ -47,7 +47,10 @@ export default function SliderHistory({
 
   return (
     <div className={containerClasses}>
-      <div className="relative mx-auto max-w-full overflow-hidden rounded-xl">
+      <div
+        className="relative mx-auto overflow-hidden rounded-xl"
+        style={{ width: "calc(100% - 60px)" }}
+      >
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -77,7 +80,7 @@ export default function SliderHistory({
 
       <div
         id={swiperId + "-prev"}
-        className={`absolute top-1/2 left-[-30px] z-5 -translate-y-1/2 cursor-pointer p-2 ${opacity}`}
+        className={`absolute top-1/2 -left-1.5 z-5 -translate-y-1/2 cursor-pointer p-2 ${opacity}`}
       >
         <Image
           src={left}
@@ -89,7 +92,7 @@ export default function SliderHistory({
 
       <div
         id={swiperId + "-next"}
-        className={`absolute top-1/2 right-[-30px] z-5 -translate-y-1/2 cursor-pointer p-2 ${opacity}`}
+        className={`absolute top-1/2 -right-1.5 z-5 -translate-y-1/2 cursor-pointer p-2 ${opacity}`}
       >
         <Image
           src={right}

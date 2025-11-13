@@ -19,7 +19,16 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./app/*"],
+      "@/attractions/*": ["./app/components/attractions/*"],
+      "@/homePage/*": ["./app/components/homePage/*"],
+      "@/history/*": ["./app/components/history/*"],
+      "@/news/*": ["./app/components/news/*"],
+      "@/cards/*": ["./app/components/common/cards/*"],
+      "@/header/*": ["./app/components/common/header/*"],
+      "@/sliders/*": ["./app/components/common/sliders/*"],
+      "@/ui/*": ["./app/components/common/ui/*"],
+      "@/images/*": ["./app/public/images/*"]
     }
   },
   "include": [

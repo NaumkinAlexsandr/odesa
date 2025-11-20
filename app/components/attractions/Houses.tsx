@@ -6,14 +6,14 @@ import gps from "@/images/icons/сardAttractions/gps.png";
 // import call from "@/images/icons/сardAttractions/call.png";
 // import info from "@/images/icons/сardAttractions/information.png";
 // import war from "@/images/icons/сardAttractions/war.png";
-import houseWall from "@/images/attractions/houseWall.jpg";
-import houseFalc from "@/images/attractions/houseFalc.jpg";
-import palaceVorontsov from "@/images/attractions/palaceVorontsov.jpg";
-import palaceShah from "@/images/attractions/palaceShah.jpg";
+import houseWall from "@/images/attractions/houses/wall/houseWall.jpg";
+import houseFalc from "@/images/attractions/houses/falc/houseFalc.jpg";
+import palaceVorontsov from "@/images/attractions/houses/vorontsov/palaceVorontsov.jpg";
+import palaceShah from "@/images/attractions/houses/shah/palaceShah.jpg";
 import {
   housesTranslations,
   sectionHouses,
-} from "@/lib/translations/attractions/houses";
+} from "@/lib/translations/attractions/houses/houses";
 
 export default function Houses() {
   const { currentLang } = useLanguage();

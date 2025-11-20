@@ -6,12 +6,12 @@ import gps from "@/images/icons/сardAttractions/gps.png";
 // import call from "@/images/icons/сardAttractions/call.png";
 // import info from "@/images/icons/сardAttractions/information.png";
 // import war from "@/images/icons/сardAttractions/war.png";
-import parkCity from "@/images/attractions/parkCity.jpg";
-import parkShevchenko from "@/images/attractions/parkShevchenko.jpg";
+import parkCity from "@/images/attractions/parks/parkCity.jpg";
+import parkShevchenko from "@/images/attractions/parks/parkShevchenko.jpg";
 import {
   parksTranslations,
   sectionParks,
-} from "@/lib/translations/attractions/parks";
+} from "@/lib/translations/attractions/parks/parks";
 
 export default function Parks() {
   const { currentLang } = useLanguage();

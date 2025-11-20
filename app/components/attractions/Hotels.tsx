@@ -1,18 +1,17 @@
 "use client";
-import React from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import AttractionsCard from "@/components/common/cards/AttractionsCard";
 import gps from "@/images/icons/сardAttractions/gps.png";
 import call from "@/images/icons/сardAttractions/call.png";
-// import info from "@/images/icons/сardAttractions/information.png";
+import info from "@/images/icons/сardAttractions/information.png";
 import war from "@/images/icons/сardAttractions/war.png";
-import passage from "@/images/attractions/passage.jpg";
-import moskovskaya from "@/images/attractions/moskovskaya.jpg";
-import bristol from "@/images/attractions/bristol.jpg";
+import passage from "@/images/attractions/hotels/passage/passage-5.jpg";
+import moskovskaya from "@/images/attractions/hotels/moskovskaya/moskovskaya-1.jpg";
+import bristol from "@/images/attractions/hotels/bristol/bristol-2.jpg";
 import {
   hotelTranslations,
   sectionHotels,
-} from "@/lib/translations/attractions/hotels";
+} from "@/lib/translations/attractions/hotels/hotels";
 
 export default function Hotels() {
   const { currentLang, langPrefix } = useLanguage();
@@ -39,9 +38,9 @@ export default function Hotels() {
           call={call}
           phoneNumber={hotels.passage.phoneNumber}
           url={hotels.passage.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/attractions/theaters/odesa-philharmonic`}
-          // moreInfo={hotels.passage.moreInfo}
+          info={info}
+          urlInfo={`${langPrefix}/attractions/hotels/the-passage`}
+          moreInfo={hotels.passage.moreInfo}
           // war={war}
           // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
           // warInfo={hotels.passage.warInfo}
@@ -56,9 +55,9 @@ export default function Hotels() {
           gps={gps}
           address={hotels.moskovskaya.address}
           url={hotels.moskovskaya.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/attractions/theaters/odesa-philharmonic`}
-          // moreInfo={hotels.moskovskaya.moreInfo}
+          info={info}
+          urlInfo={`${langPrefix}/attractions/hotels/the-great-moscow`}
+          moreInfo={hotels.moskovskaya.moreInfo}
           // war={war}
           // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
           // warInfo={hotels.moskovskaya.warInfo}
@@ -75,9 +74,9 @@ export default function Hotels() {
           call={call}
           phoneNumber={hotels.bristol.phoneNumber}
           url={hotels.bristol.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/attractions/theaters/odesa-philharmonic`}
-          // moreInfo={hotels.bristol.moreInfo}
+          info={info}
+          urlInfo={`${langPrefix}/attractions/hotels/the-bristol`}
+          moreInfo={hotels.bristol.moreInfo}
           war={war}
           warURl={`${langPrefix}/destruction/bristol-hotel-strike`}
           warInfo={hotels.bristol.warInfo}

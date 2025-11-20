@@ -6,13 +6,13 @@ import gps from "@/images/icons/сardAttractions/gps.png";
 import call from "@/images/icons/сardAttractions/call.png";
 // import info from "@/images/icons/сardAttractions/information.png";
 // import war from "@/images/icons/сardAttractions/war.png";
-import museumArt from "@/images/attractions/museumArt.jpg";
-import museumWEArt from "@/images/attractions/museumWEArt.jpg";
-import museumArchaeological from "@/images/attractions/museumArchaeological.jpg";
+import museumArt from "@/images/attractions/museums/museumArt.jpg";
+import museumWEArt from "@/images/attractions/museums/museumWEArt.jpg";
+import museumArchaeological from "@/images/attractions/museums/museumArchaeological.jpg";
 import {
   museumsTranslations,
   sectionMuseums,
-} from "@/lib/translations/attractions/museums";
+} from "@/lib/translations/attractions/museums/museums";
 
 export default function Museum() {
   const { currentLang } = useLanguage();

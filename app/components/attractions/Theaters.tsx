@@ -6,12 +6,12 @@ import gps from "@/images/icons/сardAttractions/gps.png";
 import call from "@/images/icons/сardAttractions/call.png";
 import info from "@/images/icons/сardAttractions/information.png";
 import war from "@/images/icons/сardAttractions/war.png";
-import opera from "@/images/attractions/opera.jpg";
-import philharmonic from "@/images/attractions/philharmonic.jpg";
+import opera from "@/images/attractions/theatre/opera/opera.jpg";
+import philharmonic from "@/images/attractions/theatre/philharmonic/philharmonic_one.jpg";
 import {
   theatersTranslations,
   sectionTheaters,
-} from "@/lib/translations/attractions/theaters";
+} from "@/lib/translations/attractions/theaters/theaters";
 
 export default function Theaters() {
   const { currentLang, langPrefix } = useLanguage();

@@ -6,12 +6,12 @@ import gps from "@/images/icons/сardAttractions/gps.png";
 import call from "@/images/icons/сardAttractions/call.png";
 // import info from "@/images/icons/сardAttractions/information.png";
 // import war from "@/images/icons/сardAttractions/war.png";
-import nemo from "@/images/attractions/nemo.jpeg";
-import arkadia from "@/images/attractions/arkadiaTwo.jpg";
+import nemo from "@/images/attractions/leisure/nemo.jpeg";
+import arkadia from "@/images/attractions/leisure/arkadiaTwo.jpg";
 import {
   leisuresTranslations,
   sectionLeisures,
-} from "@/lib/translations/attractions/leisure";
+} from "@/lib/translations/attractions/leisure/leisure";
 
 export default function Leisure() {
   const { currentLang } = useLanguage();

@@ -5,12 +5,12 @@ import AttractionsCard from "@/components/common/cards/AttractionsCard";
 import gps from "@/images/icons/сardAttractions/gps.png";
 // import info from "@/images/icons/сardAttractions/information.png";
 // import war from "@/images/icons/сardAttractions/war.png";
-import monumentDuke from "@/images/attractions/monumentDuke.jpg";
-import stairsPotemkinskaya from "@/images/attractions/stairsPotemkinskaya.jpg";
+import monumentDuke from "@/images/attractions/monuments/duke/monumentDuke.jpg";
+import stairsPotemkinskaya from "@/images/attractions/monuments/potemkinskaya/stairsPotemkinskaya.jpg";
 import {
   monumentsTranslations,
   sectionMonuments,
-} from "@/lib/translations/attractions/monuments";
+} from "@/lib/translations/attractions/monuments/monuments";
 
 export default function Monuments() {
   const { currentLang } = useLanguage();

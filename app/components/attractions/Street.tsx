@@ -6,12 +6,12 @@ import gps from "@/images/icons/сardAttractions/gps.png";
 // import call from "@/images/icons/сardAttractions/call.png";
 // import info from "@/images/icons/сardAttractions/information.png";
 // import war from "@/images/icons/сardAttractions/war.png";
-import streetDeribasovskaya from "@/images/attractions/streetDeribasovskaya.jpg";
-import streetPrimorskiy from "@/images/attractions/streetPrimorskiy.jpg";
+import streetDeribasovskaya from "@/images/attractions/streets/deribasovskaya/streetDeribasovskaya.jpg";
+import streetPrimorskiy from "@/images/attractions/streets/primorskiy/streetPrimorskiy.jpg";
 import {
   sectionStreets,
   streetsTranslations,
-} from "@/lib/translations/attractions/streets";
+} from "@/lib/translations/attractions/streets/streets";
 
 export default function Street() {
   const { currentLang } = useLanguage();

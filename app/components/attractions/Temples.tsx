@@ -6,12 +6,12 @@ import gps from "@/images/icons/сardAttractions/gps.png";
 import call from "@/images/icons/сardAttractions/call.png";
 // import info from "@/images/icons/сardAttractions/information.png";
 import war from "@/images/icons/сardAttractions/war.png";
-import preobrajenskiy from "@/images/attractions/preobrajenskiy.jpg";
-import uspenskiy from "@/images/attractions/uspenskiy.jpg";
+import preobrajenskiy from "@/images/attractions/temples/preobrajenskiy/preobrajenskiy.jpg";
+import uspenskiy from "@/images/attractions/temples/uspenskiy/uspenskiy.jpg";
 import {
   sectionTemples,
   templesTranslations,
-} from "@/lib/translations/attractions/temples";
+} from "@/lib/translations/attractions/temples/temples";
 
 export default function Temples() {
   const { currentLang, langPrefix } = useLanguage();

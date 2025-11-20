@@ -6,14 +6,14 @@ import gps from "@/images/icons/сardAttractions/gps.png";
 // import call from "@/images/icons/сardAttractions/call.png";
 // import info from "@/images/icons/сardAttractions/information.png";
 import war from "@/images/icons/сardAttractions/war.png";
-import bridgeMother from "@/images/attractions/bridgeMother.jpg";
-import port from "@/images/attractions/port.jpg";
-import privoz from "@/images/attractions/privozTwo.jpg";
-import catacombs from "@/images/attractions/catacombs.jpg";
+import bridgeMother from "@/images/attractions/other/bridgeMother/bridgeMother.jpg";
+import port from "@/images/attractions/other/port/port.jpg";
+import privoz from "@/images/attractions/other/privoz/privozTwo.jpg";
+import catacombs from "@/images/attractions/other/catacombs/catacombs.jpg";
 import {
   otherTranslations,
   sectionOther,
-} from "@/lib/translations/attractions/other";
+} from "@/lib/translations/attractions/other/other";
 
 export default function Other() {
   const { currentLang, langPrefix } = useLanguage();

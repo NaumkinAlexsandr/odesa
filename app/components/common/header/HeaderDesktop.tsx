@@ -35,7 +35,7 @@ export default function HeaderDesktop() {
   };
 
   return (
-    <div className="flex w-full items-center justify-between p-2">
+    <div className="mx-auto flex max-w-7xl items-center justify-between p-2">
       <div className="flex items-center">
         <CardLogo />
         <nav className="flex gap-x-2">

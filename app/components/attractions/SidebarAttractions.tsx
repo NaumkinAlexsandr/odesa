@@ -5,13 +5,13 @@ import { ISidebarSection } from "@/type/interface";
 import { useLanguage } from "@/hooks/useLanguage";
 
 import { slidebarHistory } from "@/lib/translations/history/slidebarHistory";
-import { sectionTheaters } from "@/lib/translations/attractions/theaters";
-import { sectionTemples } from "@/lib/translations/attractions/temples";
-import { sectionParks } from "@/lib/translations/attractions/parks";
-import { sectionHotels } from "@/lib/translations/attractions/hotels";
-import { sectionMuseums } from "@/lib/translations/attractions/museums";
-import { sectionLeisures } from "@/lib/translations/attractions/leisure";
-import { sectionHouses } from "@/lib/translations/attractions/houses";
+import { sectionTheaters } from "@/lib/translations/attractions/theaters/theaters";
+import { sectionTemples } from "@/lib/translations/attractions/temples/temples";
+import { sectionParks } from "@/lib/translations/attractions/parks/parks";
+import { sectionHotels } from "@/lib/translations/attractions/hotels/hotels";
+import { sectionMuseums } from "@/lib/translations/attractions/museums/museums";
+import { sectionLeisures } from "@/lib/translations/attractions/leisure/leisure";
+import { sectionHouses } from "@/lib/translations/attractions/houses/houses";
 
 export default function SidebarAttractions() {
   const { currentLang } = useLanguage();

@@ -20,7 +20,7 @@ export const allEvents: AllEventsType = {
   ua: {
     event_01: {
       id: `bohemian-uk`,
-      isoDate: `2025-10-29T19:00:00.000Z`,
+      isoDate: `2030-10-29T19:00:00.000Z`,
       displayDate: `29 жовтня 19:00`,
       title: `The Bohemians. Queen tribute show (UK).`,
       place: `Театр музкомедії `,
@@ -31,7 +31,7 @@ export const allEvents: AllEventsType = {
     },
     event_02: {
       id: `acdc`,
-      isoDate: `2025-10-30T19:00:00.000Z`,
+      isoDate: `2030-10-30T19:00:00.000Z`,
       displayDate: `30 жовтня 19:00`,
       title: `AC/DC`,
       place: `Одеська Обласна Філармонія`,
@@ -42,7 +42,7 @@ export const allEvents: AllEventsType = {
     },
     event_03: {
       id: `sting-tribute`,
-      isoDate: `2025-10-31T19:00:00.000Z`,
+      isoDate: `2030-10-31T19:00:00.000Z`,
       displayDate: `31 жовтня 19:00`,
       title: `Джазовий Sting приватний`,
       place: `Міжнародний культурний центр`,
@@ -53,7 +53,7 @@ export const allEvents: AllEventsType = {
     },
     event_04: {
       id: `festival-chor`,
-      isoDate: `2025-11-01T18:00:00.000Z`,
+      isoDate: `2030-11-01T18:00:00.000Z`,
       displayDate: `01 листопада 18:00`,
       title: `Урочисте відкриття II Всеукраїнського фестивалю концертів хор`,
       place: `Собор Успіння Пресвятої Богородиці`,
@@ -64,7 +64,7 @@ export const allEvents: AllEventsType = {
     },
     event_05: {
       id: `kazka`,
-      isoDate: `2025-11-03T19:00:00.000Z`,
+      isoDate: `2030-11-03T19:00:00.000Z`,
       displayDate: `03 листопада 19:00`,
       title: `Kazka`,
       place: `Театр музкомедії `,
@@ -75,7 +75,7 @@ export const allEvents: AllEventsType = {
     },
     event_06: {
       id: `number-13`,
-      isoDate: `2025-11-04T19:00:00.000Z`,
+      isoDate: `2030-11-04T19:00:00.000Z`,
       displayDate: `4 листопада 19:00`,
       title: `Номер 13`,
       place: `Театр музкомедії `,
@@ -86,7 +86,7 @@ export const allEvents: AllEventsType = {
     },
     event_08: {
       id: `kanotopska-vedma`,
-      isoDate: `2025-11-19T19:00:00.000Z`,
+      isoDate: `2030-11-19T19:00:00.000Z`,
       displayDate: `19 листопада 19:00`,
       title: `Конотопська відьма`,
       place: `Театр музкомедії `,
@@ -97,7 +97,7 @@ export const allEvents: AllEventsType = {
     },
     event_09: {
       id: `vivienne-quartet`,
-      isoDate: `2025-11-21T18:00:00.000Z`,
+      isoDate: `2030-11-21T18:00:00.000Z`,
       displayDate: `21 листопада 18:00`,
       title: `Vivienne Mort з вікалом квартетом`,
       place: `Український Театр`,
@@ -108,7 +108,7 @@ export const allEvents: AllEventsType = {
     },
     event_10: {
       id: `kozlovsky`,
-      isoDate: `2025-11-25T18:00:00.000Z`,
+      isoDate: `2030-11-25T18:00:00.000Z`,
       displayDate: `25 листопада 18:00`,
       title: `Віталій Козловський`,
       place: `Театр музкомедії `,
@@ -119,7 +119,7 @@ export const allEvents: AllEventsType = {
     },
     event_11: {
       id: `drakula-vlad`,
-      isoDate: `2025-12-02T18:00:00.000Z`,
+      isoDate: `2030-12-02T18:00:00.000Z`,
       displayDate: `02 грудня 18:00`,
       title: `Дракула. Vlad`,
       place: `Театр музкомедії `,
@@ -130,7 +130,7 @@ export const allEvents: AllEventsType = {
     },
     event_12: {
       id: `ladies-night`,
-      isoDate: `2025-12-09T19:30:00.000Z`,
+      isoDate: `2030-12-09T19:30:00.000Z`,
       displayDate: `09 грудня 17:30`,
       title: `Ladies' Night`,
       place: `Театр музкомедії `,
@@ -141,7 +141,7 @@ export const allEvents: AllEventsType = {
     },
     event_13: {
       id: `alisa-v-kraine-chudes`,
-      isoDate: `2025-12-16T15:00:00.000Z`,
+      isoDate: `2030-12-16T15:00:00.000Z`,
       displayDate: `29 жовтня 2025 15:00`,
       title: `Аліса в країні чудес (Балетна студія Є. Антипової)`,
       place: `Одеський театр Опери та Балету`,
@@ -152,7 +152,7 @@ export const allEvents: AllEventsType = {
     },
     event_14: {
       id: `troe-porosyat`,
-      isoDate: `2025-11-02T12:00:00.000Z`,
+      isoDate: `2030-11-02T12:00:00.000Z`,
       displayDate: `2 листопада 2025 12:00`,
       title: `Троє поросят`,
       place: `Одеський обласний театр ляльок`,
@@ -163,7 +163,7 @@ export const allEvents: AllEventsType = {
     },
     event_15: {
       id: `poizd-odesa-mama`,
-      isoDate: `2025-11-29T19:00:00.000Z`,
+      isoDate: `2030-11-29T19:00:00.000Z`,
       displayDate: `29 листопада 19:00`,
       title: `Поїзд «Одеса-мама»`,
       place: `Театр музкомедії `,
@@ -187,7 +187,7 @@ export const allEvents: AllEventsType = {
   ru: {
     event_01: {
       id: `bohemian-uk`,
-      isoDate: `2025-10-29T19:00:00.000Z`,
+      isoDate: `2030-10-29T19:00:00.000Z`,
       displayDate: `29 октября 19:00`,
       title: `The Bohemians. Queen tribute show (UK).`,
       place: `Театр музкомедии (ОАТМК им. М. Водяного)`,
@@ -198,7 +198,7 @@ export const allEvents: AllEventsType = {
     },
     event_02: {
       id: `acdc`,
-      isoDate: `2025-10-30T19:00:00.000Z`,
+      isoDate: `2030-10-30T19:00:00.000Z`,
       displayDate: `30 октября 19:00`,
       title: `AC/DC`,
       place: `Одесская Областная Филармония`,
@@ -209,7 +209,7 @@ export const allEvents: AllEventsType = {
     },
     event_03: {
       id: `sting-tribute`,
-      isoDate: `2025-10-31T19:00:00.000Z`,
+      isoDate: `2030-10-31T19:00:00.000Z`,
       displayDate: `31 октября 19:00`,
       title: `Джазовый Sting приватный`,
       place: `Международный культурный центр`,
@@ -220,7 +220,7 @@ export const allEvents: AllEventsType = {
     },
     event_04: {
       id: `festival-chor`,
-      isoDate: `2025-11-01T18:00:00.000Z`,
+      isoDate: `2030-11-01T18:00:00.000Z`,
       displayDate: `01 ноября 18:00`,
       title: `Торжественное открытие II Всеукраинского фестиваля концертов хора`,
       place: `Собор Успения Пресвятой Богородицы`,
@@ -231,7 +231,7 @@ export const allEvents: AllEventsType = {
     },
     event_05: {
       id: `kazka`,
-      isoDate: `2025-11-03T19:00:00.000Z`,
+      isoDate: `2030-11-03T19:00:00.000Z`,
       displayDate: `03 ноября 19:00`,
       title: `Kazka`,
       place: `Театр музкомедии (ОАТМК им. М. Водяного)`,
@@ -242,7 +242,7 @@ export const allEvents: AllEventsType = {
     },
     event_06: {
       id: `number-13`,
-      isoDate: `2025-11-04T19:00:00.000Z`,
+      isoDate: `2030-11-04T19:00:00.000Z`,
       displayDate: `4 ноября 19:00`,
       title: `Номер 13`,
       place: `Театр музкомедии (ОАТМК им. М. Водяного)`,
@@ -253,7 +253,7 @@ export const allEvents: AllEventsType = {
     },
     event_08: {
       id: `kanotopska-vedma`,
-      isoDate: `2025-11-19T19:00:00.000Z`,
+      isoDate: `2030-11-19T19:00:00.000Z`,
       displayDate: `19 ноября 19:00`,
       title: `Конотопская ведьма`,
       place: `Театр музкомедии (ОАТМК им. М. Водяного)`,
@@ -264,7 +264,7 @@ export const allEvents: AllEventsType = {
     },
     event_09: {
       id: `vivienne-quartet`,
-      isoDate: `2025-11-21T18:00:00.000Z`,
+      isoDate: `2030-11-21T18:00:00.000Z`,
       displayDate: `21 ноября 18:00`,
       title: `Vivienne Mort с вокальным квартетом`,
       place: `Украинский Театр`,
@@ -275,7 +275,7 @@ export const allEvents: AllEventsType = {
     },
     event_10: {
       id: `kozlovsky`,
-      isoDate: `2025-11-25T18:00:00.000Z`,
+      isoDate: `2030-11-25T18:00:00.000Z`,
       displayDate: `25 ноября 18:00`,
       title: `Виталий Козловский`,
       place: `Театр музкомедии (ОАТМК им. М. Водяного)`,
@@ -286,7 +286,7 @@ export const allEvents: AllEventsType = {
     },
     event_11: {
       id: `drakula-vlad`,
-      isoDate: `2025-12-02T18:00:00.000Z`,
+      isoDate: `2030-12-02T18:00:00.000Z`,
       displayDate: `02 декабря 18:00`,
       title: `Дракула. Vlad`,
       place: `Театр музкомедии (ОАТМК им. М. Водяного)`,
@@ -297,7 +297,7 @@ export const allEvents: AllEventsType = {
     },
     event_12: {
       id: `ladies-night`,
-      isoDate: `2025-12-09T19:30:00.000Z`,
+      isoDate: `2030-12-09T19:30:00.000Z`,
       displayDate: `09 декабря 17:30`,
       title: `Ladies' Night`,
       place: `Театр музкомедии (ОАТМК им. М. Водяного)`,
@@ -308,7 +308,7 @@ export const allEvents: AllEventsType = {
     },
     event_13: {
       id: `alisa-v-kraine-chudes`,
-      isoDate: `2025-12-16T15:00:00.000Z`,
+      isoDate: `2030-12-16T15:00:00.000Z`,
       displayDate: `16 декабря 2025 15:00`,
       title: `Алиса в стране чудес (Балетная студия Е. Антиповой)`,
       place: `Одесский театр Оперы и Балета`,
@@ -319,7 +319,7 @@ export const allEvents: AllEventsType = {
     },
     event_14: {
       id: `troe-porosyat`,
-      isoDate: `2025-11-02T12:00:00.000Z`,
+      isoDate: `2030-11-02T12:00:00.000Z`,
       displayDate: `2 ноября 2025 12:00`,
       title: `Три поросенка`,
       place: `Одесский областной театр кукол`,
@@ -330,7 +330,7 @@ export const allEvents: AllEventsType = {
     },
     event_15: {
       id: `poizd-odesa-mama`,
-      isoDate: `2025-11-29T19:00:00.000Z`,
+      isoDate: `2030-11-29T19:00:00.000Z`,
       displayDate: `29 ноября 19:00`,
       title: `Поезд «Одесса-мама»`,
       place: `Театр музкомедии (ОАТМК им. М. Водяного)`,
@@ -354,7 +354,7 @@ export const allEvents: AllEventsType = {
   en: {
     event_01: {
       id: `bohemian-uk`,
-      isoDate: `2025-10-29T19:00:00.000Z`,
+      isoDate: `2030-10-29T19:00:00.000Z`,
       displayDate: `October 29, 19:00`,
       title: `The Bohemians. Queen tribute show (UK).`,
       place: `Musical Comedy Theater (OATMK named after M. Vodyanoy)`,
@@ -365,7 +365,7 @@ export const allEvents: AllEventsType = {
     },
     event_02: {
       id: `acdc`,
-      isoDate: `2025-10-30T19:00:00.000Z`,
+      isoDate: `2030-10-30T19:00:00.000Z`,
       displayDate: `October 30, 19:00`,
       title: `AC/DC`,
       place: `Odesa Regional Philharmonic`,
@@ -376,7 +376,7 @@ export const allEvents: AllEventsType = {
     },
     event_03: {
       id: `sting-tribute`,
-      isoDate: `2025-10-31T19:00:00.000Z`,
+      isoDate: `2030-10-31T19:00:00.000Z`,
       displayDate: `October 31, 19:00`,
       title: `Jazz Sting Private`,
       place: `International Cultural Center`,
@@ -387,7 +387,7 @@ export const allEvents: AllEventsType = {
     },
     event_04: {
       id: `festival-chor`,
-      isoDate: `2025-11-01T18:00:00.000Z`,
+      isoDate: `2030-11-01T18:00:00.000Z`,
       displayDate: `November 01, 18:00`,
       title: `Grand Opening of the II All-Ukrainian Festival of Choir Concerts`,
       place: `Cathedral of the Assumption of the Blessed Virgin Mary`,
@@ -398,7 +398,7 @@ export const allEvents: AllEventsType = {
     },
     event_05: {
       id: `kazka`,
-      isoDate: `2025-11-03T19:00:00.000Z`,
+      isoDate: `2030-11-03T19:00:00.000Z`,
       displayDate: `November 03, 19:00`,
       title: `Kazka`,
       place: `Musical Comedy Theater (OATMK named after M. Vodyanoy)`,
@@ -409,7 +409,7 @@ export const allEvents: AllEventsType = {
     },
     event_06: {
       id: `number-13`,
-      isoDate: `2025-11-04T19:00:00.000Z`,
+      isoDate: `2030-11-04T19:00:00.000Z`,
       displayDate: `November 4, 19:00`,
       title: `Number 13`,
       place: `Musical Comedy Theater (OATMK named after M. Vodyanoy)`,
@@ -420,7 +420,7 @@ export const allEvents: AllEventsType = {
     },
     event_08: {
       id: `kanotopska-vedma`,
-      isoDate: `2025-11-19T19:00:00.000Z`,
+      isoDate: `2030-11-19T19:00:00.000Z`,
       displayDate: `November 19, 19:00`,
       title: `The Witch of Konotop`,
       place: `Musical Comedy Theater (OATMK named after M. Vodyanoy)`,
@@ -431,7 +431,7 @@ export const allEvents: AllEventsType = {
     },
     event_09: {
       id: `vivienne-quartet`,
-      isoDate: `2025-11-21T18:00:00.000Z`,
+      isoDate: `2030-11-21T18:00:00.000Z`,
       displayDate: `November 21, 18:00`,
       title: `Vivienne Mort with a vocal quartet`,
       place: `Ukrainian Theater`,
@@ -442,7 +442,7 @@ export const allEvents: AllEventsType = {
     },
     event_10: {
       id: `kozlovsky`,
-      isoDate: `2025-11-25T18:00:00.000Z`,
+      isoDate: `2030-11-25T18:00:00.000Z`,
       displayDate: `November 25, 18:00`,
       title: `Vitaliy Kozlovskiy`,
       place: `Musical Comedy Theater (OATMK named after M. Vodyanoy)`,
@@ -453,7 +453,7 @@ export const allEvents: AllEventsType = {
     },
     event_11: {
       id: `drakula-vlad`,
-      isoDate: `2025-12-02T18:00:00.000Z`,
+      isoDate: `2030-12-02T18:00:00.000Z`,
       displayDate: `December 02, 18:00`,
       title: `Dracula. Vlad`,
       place: `Musical Comedy Theater (OATMK named after M. Vodyanoy)`,
@@ -464,7 +464,7 @@ export const allEvents: AllEventsType = {
     },
     event_12: {
       id: `ladies-night`,
-      isoDate: `2025-12-09T19:30:00.000Z`,
+      isoDate: `2030-12-09T19:30:00.000Z`,
       displayDate: `December 09, 17:30`,
       title: `Ladies' Night`,
       place: `Musical Comedy Theater (OATMK named after M. Vodyanoy)`,
@@ -475,7 +475,7 @@ export const allEvents: AllEventsType = {
     },
     event_13: {
       id: `alisa-v-kraine-chudes`,
-      isoDate: `2025-12-16T15:00:00.000Z`,
+      isoDate: `2030-12-16T15:00:00.000Z`,
       displayDate: `December 16, 2025 15:00`,
       title: `Alice in Wonderland (E. Antipova's Ballet Studio)`,
       place: `Odesa Opera and Ballet Theater`,
@@ -486,7 +486,7 @@ export const allEvents: AllEventsType = {
     },
     event_14: {
       id: `troe-porosyat`,
-      isoDate: `2025-11-02T12:00:00.000Z`,
+      isoDate: `2030-11-02T12:00:00.000Z`,
       displayDate: `November 2, 2025 12:00`,
       title: `The Three Little Pigs`,
       place: `Odesa Regional Puppet Theater`,
@@ -497,7 +497,7 @@ export const allEvents: AllEventsType = {
     },
     event_15: {
       id: `poizd-odesa-mama`,
-      isoDate: `2025-11-29T19:00:00.000Z`,
+      isoDate: `2030-11-29T19:00:00.000Z`,
       displayDate: `November 29, 19:00`,
       title: `Train "Odesa-Mama"`,
       place: `Musical Comedy Theater (OATMK named after M. Vodyanoy)`,

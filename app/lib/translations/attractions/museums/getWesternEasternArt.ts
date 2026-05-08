@@ -1,6 +1,6 @@
 "use client";
 import { IImagWrapper } from "@/type/interface";
-import { imgAlt, imgСaption } from "./bristol";
+import { imgAlt, imgСaption } from "./westernEasternArt";
 
 import two from "@/public/images/attractions/hotels/bristol/bristol-2.jpg";
 import three from "@/public/images/attractions/hotels/bristol/bristol-3.jpg";

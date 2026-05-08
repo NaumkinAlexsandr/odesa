@@ -44,7 +44,7 @@ export default function SliderContent({
     }
   }, [prevElId, nextElId]);
 
-  const containerClasses = `relative ${floatDirection} mx-6 w-[100%] p-2 md:w-1/2 lg:w-1/2`;
+  const containerClasses = `relative ${floatDirection} w-[100%] p-2 md:w-1/2 lg:w-1/2`;
   const opacity = `opacity-50 transition-opacity duration-300 hover:opacity-100`;
 
   return (

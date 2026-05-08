@@ -1,5 +1,5 @@
 import React from "react";
-import SliderContent from "../sliders/SliderContent";
+import SliderContent from "@/sliders/SliderContent";
 import { IContentTranslation } from "@/type/content";
 import { ISliderProps, IFloatDirection } from "@/type/interface";
 import { renderContentBlocks } from "@/utils/contentRenderer";

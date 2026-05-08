@@ -51,3 +51,27 @@ export const imgСaption = {
   ru: { one: ``, two: ``, three: ``, four: `` },
   en: { one: ``, two: ``, three: ``, four: `` },
 };
+
+/*
+    eleven: ``,
+    twelve: ``,
+    thirteen: ``,
+    fourteen: ``,
+    fifteen: ``,
+    sixteen: ``,
+    seventeen: ``,
+    eighteen: ``,
+    nineteen: ``,
+    twenty: ``,
+    twentyOne: ``,
+    twentyTwo: ``,
+    twentyThree: ``,
+    twentyFour: ``,
+    twentyFive: ``,
+    twentySix: ``,
+    twentySeven: ``,
+    twentyEight: ``,
+    twentyNine: ``,
+    thirty: ``,
+
+    */

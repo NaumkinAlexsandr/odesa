@@ -22,6 +22,8 @@ text-[14px] md:text-[16px]`;
 export const p = `font-georgia leading-relaxed 
 text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px]`;
 
+export const ul = `list-inside list-disc space-y-2`;
+
 export const h3_card = `font-georgia leading-tight font-bold
 text-[16px] sm:text-[16px] md:text-[18px] lg:text-[18px]`;
 

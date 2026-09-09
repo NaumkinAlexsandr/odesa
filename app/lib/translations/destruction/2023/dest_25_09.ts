@@ -1,0 +1,58 @@
+import { IContentArticle } from "@/type/content";
+import { dest_25_09_Slider } from "./dest_25_09_Slider";
+import one from "@/images/destruction/2023/25.09/destruction_01.jpg";
+
+export const dest_25_09: IContentArticle = {
+  id: `strike-on-marine-terminal-and-hotel-odesa`,
+  isoDate: "2023-09-25T00:00:00.000Z",
+  layoutType: `sliderLeft`,
+  urlImg: one,
+  slides: dest_25_09_Slider,
+  translations: {
+    ua: {
+      title: `Удар по Морському вокзалу та готелю "Одеса". Знищення символу міста.`,
+      displayDate: `25 вересня 2023 р.`,
+      alt: `Удар по Морському вокзалу та готелю "Одеса".`,
+      p_01: `У ніч на 25 вересня 2023 року російські війська здійснили масовану ракетну атаку на Одесу та область, унаслідок якої було завдано значних руйнувань припортовій інфраструктурі та символічним об'єктам міста.`,
+      p_02: `Головною ціллю удару, імовірно, стали об'єкти портової інфраструктури, але найбільших видимих пошкоджень зазнали:`,
+      p_03: [`Морський вокзал Одеси.`, `Готель "Одеса".`],
+      p_04: `Атака була здійснена із застосуванням кількох типів ракет та дронів, зокрема надзвуковими протикорабельними ракетами "Онікс" та крилатими ракетами "Калібр".`,
+      p_05: `Будівля, яка протягом багатьох років була однією з візитівок і домінантою Одеського морського фасаду, зазнала катастрофічних руйнувань.`,
+      p_06: `Внаслідок влучання в привокзальному готелі (який уже кілька років не функціонував) спалахнула масштабна пожежа. Незважаючи на оперативну ліквідацію вогню рятувальниками, будівля вигоріла майже вщент, залишивши лише обгорілий каркас.`,
+      p_07: `На опублікованих фото та відео було видно, що готель практично повністю знищений, перетворившись на руїни.`,
+      p_08: `Сама будівля Морського вокзалу також зазнала суттєвих пошкоджень. Крім цього, ворог влучив у зерносховища, а також пошкодив складські будівлі та приватні будинки в Одеському районі.`,
+      p_09: `Загиблих не було. Постраждала одна цивільна особа (жінка), яку травмувало уламками вибуховою хвилею. Їй була надана необхідна медична допомога.`,
+      p_10: `Цей обстріл став ще одним прикладом знищення цивільних об'єктів та туристичних символів Одеси, що викликало міжнародне обурення.`,
+    },
+    ru: {
+      title: `Удар по Морскому вокзалу и гостинице "Одесса". Уничтожение символа города.`,
+      displayDate: `25 сентября 2023 г.`,
+      alt: `Удар по Морскому вокзалу и гостинице "Одесса".`,
+      p_01: `В ночь на 25 сентября 2023 года российские войска совершили массированную ракетную атаку на Одессу и область, в результате которой были нанесены значительные разрушения припортовой инфраструктуре и символическим объектам города.`,
+      p_02: `Главной целью удара, предположительно, стали объекты портовой инфраструктуры, но наибольшие видимые повреждения получили:`,
+      p_03: [`Морской вокзал Одессы.`, `Гостиница "Одесса".`],
+      p_04: `Атака была осуществлена с применением нескольких типов ракет и дронов, в частности сверхзвуковыми противокорабельными ракетами "Оникс" и крылатыми ракетами "Калибр".`,
+      p_05: `Здание, которое на протяжении многих лет было одной из визитных карточек и доминантой Одесского морского фасада, подверглось катастрофическим разрушениям.`,
+      p_06: `В результате попадания в привокзальной гостинице (которая уже несколько лет не функционировала) вспыхнул масштабный пожар. Несмотря на оперативную ликвидацию огня спасателями, здание выгорело почти дотла, оставив лишь обгоревший каркас.`,
+      p_07: `На опубликованных фото и видео было видно, что гостиница практически полностью уничтожена, превратившись в руины.`,
+      p_08: `Само здание Морского вокзала также получило существенные повреждения. Кроме этого, враг попал в зернохранилища, а также повредил складские здания и частные дома в Одесском районе.`,
+      p_09: `Погибших не было. Пострадало одно гражданское лицо (женщина), которую травмировало обломками и взрывной волной. Ей была оказана необходимая медицинская помощь.`,
+      p_10: `Этот обстрел стал еще одним примером уничтожения гражданских объектов и туристических символов Одессы, что вызвало международное возмущение.`,
+    },
+    en: {
+      title: `Strike on the Marine Terminal and Hotel "Odesa". Destruction of a city symbol.`,
+      displayDate: `September 25, 2023`,
+      alt: `Strike on the Marine Terminal and Hotel "Odesa".`,
+      p_01: `On the night of September 25, 2023, Russian forces launched a massive missile attack on Odesa and the region, resulting in significant destruction to port infrastructure and symbolic city landmarks.`,
+      p_02: `The main target of the strike was likely port infrastructure facilities, but the most visible damage was sustained by:`,
+      p_03: [`The Odesa Marine Terminal.`, `The "Odesa" Hotel.`],
+      p_04: `The attack was carried out using several types of missiles and drones, including supersonic "Oniks" anti-ship missiles and "Kalibr" cruise missiles.`,
+      p_05: `The building, which for many years had been one of the landmarks and a dominant feature of Odesa's maritime facade, suffered catastrophic destruction.`,
+      p_06: `As a result of the hit, a large-scale fire broke out in the hotel adjacent to the terminal (which had not been operational for several years). Despite the swift extinguishing of the fire by rescuers, the building was almost completely burned down, leaving only a charred frame.`,
+      p_07: `Published photos and videos showed that the hotel was almost completely destroyed, turning it into ruins.`,
+      p_08: `The Marine Terminal building itself also sustained significant damage. In addition, the enemy hit grain storage facilities and damaged warehouse buildings and private houses in the Odesa district.`,
+      p_09: `There were no fatalities. One civilian (a woman) was injured by debris and the blast wave. She received the necessary medical assistance.`,
+      p_10: `This shelling became another example of the destruction of civilian objects and tourist symbols of Odesa, which caused international outrage.`,
+    },
+  },
+};

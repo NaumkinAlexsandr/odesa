@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --app-bg: #fafafa;
+  --app-fg: #18181b;
+  --app-card: #ffffff;
+  --app-muted: #71717a;
+  --swiper-navigation-color: #c21f1f;
+  --swiper-pagination-color: #10b981;
+  --swiper-pagination-bullet-inactive-color: #0f46b4;
+}
+
+.dark {
+  --app-bg: #09090b;
+  --app-fg: #f4f4f5;
+  --app-card: #191919;
+  --app-muted: #a1a1aa;
+}
+
+@theme inline {
+  --color-background: var(--app-bg);
+  --color-foreground: var(--app-fg);
+  --color-card: var(--app-card);
+  --color-muted: var(--app-muted);
+
+  --color-brand-dark: oklch(0.45 0.09 55); /* #7e5323 */
+
+  --font-sans: var(--font-geist-sans);
+  --font-georgia: var(--font-georgia);
+  --font-greatVibes: var(--font-greatVibes);
+  --font-caveat: var(--font-caveat);
+}
+
+@utility layout-container {
+  @apply mx-auto max-w-7xl px-4 sm:px-8 lg:px-12;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-roboto), var(--font-geist-sans), sans-serif;
+}
+
+@layer utilities {
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .animate-spin-y-180 {
+    animation: spin-y-180 6s infinite linear;
+  }
+}
+
+@keyframes spin-y-180 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--swiper-navigation-color) !important;
+  @media (min-width: 768px) {
+    --swiper-navigation-size: 40px;
+  }
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+}
+
+.swiper-button-next {
+  right: -20px !important;
+}
+
+.swiper-button-prev {
+  left: 30px !important;
+}

@@ -9,8 +9,8 @@ import SectionWrapper from "@/ui/SectionWrapper";
 import ImageWrapper from "@/ui/ImageWrapper";
 import { useAllImageSlides } from "./AllImageSlide";
 
-import universal from "@/public/images/history/revolution/universal.jpg";
-import panteleimon_1906 from "@/public/images/history/revolution/panteleimon_1906.jpg";
+import universal from "@/img/history/revolution/universal.webp";
+import panteleimon_1906 from "@/img/history/revolution/panteleimon_1906.webp";
 
 export default function Revolution() {
   const { currentLang } = useLanguage();

@@ -7,7 +7,7 @@ import { odesaPhilharmonic } from "@/lib/translations/attractions/theaters/odesa
 import { getPhilharmonicSlides } from "@/lib/translations/attractions/theaters/getPhilharmonicSlides";
 import ImageWrapper from "@/components/ui/ImageWrapper";
 
-import philharmonic from "@/public/images/history/imperial/philharmonic.jpg";
+import philharmonic from "@/img/history/imperial/philharmonic.webp";
 import { imgСaption } from "@/lib/translations/history/imgСaption";
 import { imgAlt } from "@/lib/translations/history/imgAlt";
 import ArrowUp from "@/components/common/ui/ArrowUp";

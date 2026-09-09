@@ -8,7 +8,7 @@ import { imgAlt } from "@/lib/translations/history/imgAlt";
 import SliderHistory from "@/components/common/sliders/SliderHistory";
 import ImageWrapper from "@/ui/ImageWrapper";
 import SectionWrapper from "@/ui/SectionWrapper";
-import istrion_two from "@/public/images/history/ancient/istrion_two.webp";
+import istrion_two from "@/img/history/ancient/istrion_two.webp";
 import { useAllImageSlides } from "./AllImageSlide";
 
 export default function Ancient() {

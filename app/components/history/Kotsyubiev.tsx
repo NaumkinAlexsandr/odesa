@@ -7,8 +7,8 @@ import { imgAlt } from "@/lib/translations/history/imgAlt";
 import SectionWrapper from "@/ui/SectionWrapper";
 import ImageWrapper from "@/ui/ImageWrapper";
 
-import kotsyubiev_1415 from "@/public/images/history/kotsyubiev/kotsyubiev_1415.jpg";
-import ukrainska_1648 from "@/public/images/history/kotsyubiev/ukrainska_1648.jpg";
+import kotsyubiev_1415 from "@/img/history/kotsyubiev/kotsyubiev_1415.webp";
+import ukrainska_1648 from "@/img/history/kotsyubiev/ukrainska_1648.webp";
 
 export default function Kotsyubiev() {
   const { currentLang } = useLanguage();

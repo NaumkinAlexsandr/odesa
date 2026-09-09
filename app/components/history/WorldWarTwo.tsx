@@ -9,7 +9,7 @@ import SectionWrapper from "@/ui/SectionWrapper";
 import ImageWrapper from "@/ui/ImageWrapper";
 import { useAllImageSlides } from "./AllImageSlide";
 
-import osvobozhdenie_one from "@/public/images/history/worldWarTwo/osvobozhdenie_one.jpg";
+import osvobozhdenie_one from "@/img/history/worldWarTwo/osvobozhdenie_one.webp";
 
 export default function WorldWarTwo() {
   const { currentLang } = useLanguage();

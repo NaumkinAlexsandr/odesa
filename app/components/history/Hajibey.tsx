@@ -8,7 +8,7 @@ import SliderHistory from "@/components/common/sliders/SliderHistory";
 import SectionWrapper from "@/ui/SectionWrapper";
 import { useAllImageSlides } from "./AllImageSlide";
 
-import hadzhibey_img from "@/public/images/history/hajibey/hadzhibey_img.jpg";
+import hadzhibey_img from "@/img/history/hajibey/hadzhibey_img.webp";
 import ImageWrapper from "@/ui/ImageWrapper";
 
 export default function Hajibey() {

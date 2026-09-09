@@ -9,10 +9,10 @@ import SliderHistory from "@/components/common/sliders/SliderHistory";
 import ImageWrapper from "@/ui/ImageWrapper";
 import { useAllImageSlides } from "./AllImageSlide";
 
-import hadzhibey_1794 from "@/public/images/history/imperial/hadzhibey_1794.jpg";
-import odessa_1814 from "@/public/images/history/imperial/odessa_1814.png";
-import opera_house_1887 from "@/public/images/history/imperial/opera_house_1887.jpg";
-import university_1894 from "@/public/images/history/imperial/university_1894.jpg";
+import hadzhibey_1794 from "@/img/history/imperial/hadzhibey_1794.webp";
+import odessa_1814 from "@/img/history/imperial/odessa_1814.webp";
+import opera_house_1887 from "@/img/history/imperial/opera_house_1887.webp";
+import university_1894 from "@/img/history/imperial/university_1894.webp";
 
 export default function Imperial() {
   const { currentLang } = useLanguage();

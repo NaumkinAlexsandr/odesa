@@ -1,6 +1,7 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import { odessaHistory } from "@/lib/translations/history/index";
 import { imgСaption } from "@/lib/translations/history/imgСaption";
 import { imgAlt } from "@/lib/translations/history/imgAlt";
@@ -15,16 +16,17 @@ import opera_house_1887 from "@/img/history/imperial/opera_house_1887.webp";
 import university_1894 from "@/img/history/imperial/university_1894.webp";
 
 export default function Imperial() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
+
+  const history = odessaHistory[currentLang] || odessaHistory.ua;
+  const caption = imgСaption[currentLang] || imgСaption.ua;
+  const alt = imgAlt[currentLang] || imgAlt.ua;
 
   const { odessa_1854, odessa_1899 } = useAllImageSlides();
 
-  const history = odessaHistory[currentLang as keyof typeof odessaHistory];
-  const caption = imgСaption[currentLang as keyof typeof imgСaption];
-  const alt = imgAlt[currentLang as keyof typeof imgAlt];
-
   return (
-    <div className="w-full">
+    <div className="w-full min-w-0 overflow-hidden">
       <div className="clearfix">
         <SectionWrapper
           id_h1="imperial_title_1"

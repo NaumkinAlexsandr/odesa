@@ -1,20 +1,21 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import { odessaHistory } from "@/lib/translations/history/index";
 import SliderHistory from "@/components/common/sliders/SliderHistory";
 import SectionWrapper from "@/ui/SectionWrapper";
 import { useAllImageSlides } from "./AllImageSlide";
 
 export default function Ussr() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
+  const history = odessaHistory[currentLang] || odessaHistory.ua;
   const { ruins } = useAllImageSlides();
 
-  const history = odessaHistory[currentLang as keyof typeof odessaHistory];
-
   return (
-    <div className="w-full">
+    <div className="w-full min-w-0 overflow-hidden">
       <div className="clearfix">
         <SectionWrapper
           id_h2="ussr_title_1"

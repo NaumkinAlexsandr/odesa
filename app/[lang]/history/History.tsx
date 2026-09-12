@@ -1,0 +1,39 @@
+"use client";
+
+import React from "react";
+import Ancient from "@/history/Ancient";
+import Kotsyubiev from "@/history/Kotsyubiev";
+import Hajibey from "@/history/Hajibey";
+import Imperial from "@/history/Imperial";
+import Revolution from "@/history/Revolution";
+import WorldWarTwo from "@/history/WorldWarTwo";
+import Ussr from "@/history/Ussr";
+import ModernUA from "@/history/ModernUA";
+import SidebarHystory from "@/history/SidebarHystory";
+import ArrowUp from "@/ui/ArrowUp";
+
+export default function History() {
+  return (
+    <div className="w-full px-4 pt-16 md:px-8">
+      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
+        {/* Сайдбар */}
+        <aside className="w-full">
+          <SidebarHystory />
+        </aside>
+
+        {/* Основной контент */}
+        <main className="w-full min-w-0 overflow-hidden">
+          <Ancient />
+          <Kotsyubiev />
+          <Hajibey />
+          <Imperial />
+          <Revolution />
+          <WorldWarTwo />
+          <Ussr />
+          <ModernUA />
+        </main>
+      </div>
+      <ArrowUp />
+    </div>
+  );
+}

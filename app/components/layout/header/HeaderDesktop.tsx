@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -12,50 +13,47 @@ export default function HeaderDesktop() {
     useLanguage();
 
   const translatedButtons =
-    header[currentLang as keyof typeof header].headerBtn;
-
-  const desktopLink =
-    "relative h-8 w-auto p-1.5 text-black transition-colors duration-150 ease-in-out hover:text-zinc-700";
-
-  const activeDesktopLink = "font-bold text-zinc-800";
-  const activeDesktopIndicator =
-    "absolute bottom-0 left-1/2 h-0.5 w-11/12 -translate-x-1/2 bg-zinc-700";
-
-  const NavLink = ({ path, label }: { path: string; label: string }) => {
-    const active = isActive(path);
-    return (
-      <Link
-        href={`${langPrefix}${path}`}
-        className={`${desktopLink} ${active ? activeDesktopLink : ""}`}
-      >
-        {label}
-        {active && <span className={activeDesktopIndicator}></span>}
-      </Link>
-    );
-  };
+    header[currentLang as keyof typeof header]?.headerBtn || {};
 
   return (
-    <div className="mx-auto flex max-w-7xl items-center justify-between p-2">
-      <div className="flex items-center">
-        <CardLogo />
-        <nav className="flex gap-x-2">
-          {navigationLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              path={link.path}
-              label={
-                translatedButtons[link.key as keyof typeof translatedButtons]
-              }
-            />
-          ))}
-        </nav>
+    <header className="sticky top-0 z-50 w-full border-b border-zinc-100 bg-white/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between p-2">
+        <div className="flex items-center gap-x-6">
+          <CardLogo />
+          <nav
+            className="flex items-center gap-x-2"
+            aria-label="Main Navigation"
+          >
+            {navigationLinks.map((link) => {
+              const active = isActive(link.path);
+              const label = translatedButtons[link.key] || link.key;
+
+              return (
+                <Link
+                  key={link.path}
+                  href={`${langPrefix}${link.path}`}
+                  aria-current={active ? "page" : undefined}
+                  className={`relative flex h-8 items-center p-1.5 text-black transition-colors duration-150 hover:text-zinc-700 ${
+                    active ? "font-bold text-zinc-800" : ""
+                  }`}
+                >
+                  {label}
+                  {active && (
+                    <span className="absolute bottom-0 left-1/2 h-0.5 w-11/12 -translate-x-1/2 bg-zinc-700" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+
+        <div className="flex items-center">
+          <LangSwitcher
+            currentLang={currentLang}
+            createLocalizedPath={createLocalizedPath}
+          />
+        </div>
       </div>
-      <div className="flex items-center">
-        <LangSwitcher
-          currentLang={currentLang}
-          createLocalizedPath={createLocalizedPath}
-        />
-      </div>
-    </div>
+    </header>
   );
 }

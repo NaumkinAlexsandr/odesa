@@ -1,6 +1,6 @@
 import { IContentArticle } from "@/type/content";
 
-import mainImage from "@/images/news/10.2025/news_05_1/243394.jpg";
+import mainImage from "@/img/news/10.2025/news_05_1/243394.webp";
 
 export const news_05_1: IContentArticle = {
   id: `odesa-mayor-congratulated-territorial-defense-servicemen`,

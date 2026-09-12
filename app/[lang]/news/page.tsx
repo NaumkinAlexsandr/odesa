@@ -1,45 +1,28 @@
-"use client";
-import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
-import { IContentArticle } from "@/type/content";
-
-import { h1_georgia } from "@/fonts/fontSize";
-import ContentCard from "@/cards/ContentCard";
-import { articlesAll } from "@/lib/translations/news/articlesAll";
+import { Metadata } from "next";
 import { newsText } from "@/lib/translations/news/newsText";
-import ArrowUp from "@/components/common/ui/ArrowUp";
+import AllNewsClient from "./AllNewsClient";
 
-export default function AllNews() {
-  const { currentLang, langPrefix } = useLanguage();
-  const articles: IContentArticle[] = articlesAll as IContentArticle[];
+type Props = {
+  params: Promise<{ lang: string }>;
+};
 
-  const text = newsText[currentLang as keyof typeof newsText];
-  const langKey = currentLang as "ua" | "ru" | "en";
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const currentLang = (lang as "ua" | "ru" | "en") || "ua";
+  const text = newsText[currentLang as keyof typeof newsText] || newsText.ua;
 
-  return (
-    <div className="w-full pt-15">
-      <div className="flex w-full flex-col">
-        <h1 className={`${h1_georgia} mb-4`}>{text.titlePage}</h1>
+  return {
+    title: `${text.titlePage} — Пам'ятки Одеси`,
+    description: text.titlePage
+      ? `${text.titlePage} — Новини та події Одеси`
+      : "Останні новини Одеси.",
+    openGraph: {
+      title: text.titlePage,
+      description: `${text.titlePage} — Новини та події Одеси`,
+    },
+  };
+}
 
-        <div className="flex flex-row flex-wrap items-end justify-around gap-4">
-          {articles.map((article) => (
-            <div key={article.id}>
-              <ContentCard
-                id={article.id}
-                title={article.translations[langKey].title}
-                displayDate={article.translations[langKey].displayDate}
-                urlImg={article.urlImg}
-                alt={article.translations[langKey].title}
-                isoDate={article.isoDate}
-                layoutType={article.layoutType}
-                langPrefix={langPrefix}
-                baseSlug="news"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-      <ArrowUp />
-    </div>
-  );
+export default function Page() {
+  return <AllNewsClient />;
 }

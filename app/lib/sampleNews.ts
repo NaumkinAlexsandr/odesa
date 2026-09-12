@@ -1,10 +1,10 @@
 import { StaticImageData } from "next/image";
 import { IContentArticle, ContentSliderType } from "@/type/content";
 
-import one from "@/images/destruction/2023/25.09/destruction_01.jpg";
-import two from "@/images/destruction/2023/25.09/destruction_02.jpg";
-import three from "@/images/destruction/2023/25.09/destruction_03.jpeg";
-import four from "@/images/destruction/2023/25.09/destruction_04.jpg";
+import one from "@/img/destruction/2023/25.09/destruction_01.webp";
+import two from "@/img/destruction/2023/25.09/destruction_02.webp";
+import three from "@/img/destruction/2023/25.09/destruction_03.webp";
+import four from "@/img/destruction/2023/25.09/destruction_04.webp";
 
 export const dest_25_09_Slider: ContentSliderType = [
   {

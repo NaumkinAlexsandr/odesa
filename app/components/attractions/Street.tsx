@@ -1,29 +1,28 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-// import call from "@/images/icons/сardAttractions/call.png";
-// import info from "@/images/icons/сardAttractions/information.png";
-// import war from "@/images/icons/сardAttractions/war.png";
-import streetDeribasovskaya from "@/images/attractions/streets/deribasovskaya/streetDeribasovskaya.jpg";
-import streetPrimorskiy from "@/images/attractions/streets/primorskiy/streetPrimorskiy.jpg";
+import streetDeribasovskaya from "@/img/attractions/streets/deribasovskaya/streetDeribasovskaya.webp";
+import streetPrimorskiy from "@/img/attractions/streets/primorskiy/streetPrimorskiy.webp";
 import {
   sectionStreets,
   streetsTranslations,
 } from "@/lib/translations/attractions/streets/streets";
 
 export default function Street() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const streets =
-    streetsTranslations[currentLang as keyof typeof streetsTranslations];
+  const streets = streetsTranslations[currentLang] || streetsTranslations.ua;
 
-  const titleStreets =
-    sectionStreets[currentLang as keyof typeof sectionStreets];
+  const titleStreets = sectionStreets[currentLang] || sectionStreets.ua;
 
   return (
     <div id="streets" className="scroll-mt-[65px]">
+      <h2 className="my-1 text-center text-2xl font-bold">
+        {titleStreets.sectionName}
+      </h2>
       <div className="flex flex-col space-y-4">
         <AttractionsCard
           title={streets.streetDeribasovskaya.title}
@@ -31,14 +30,8 @@ export default function Street() {
           descriptionP2={streets.streetDeribasovskaya.descriptionP2}
           imageSrc={streetDeribasovskaya}
           imagePosition="left"
-          gps={gps}
           address={streets.streetDeribasovskaya.address}
           url={streets.streetDeribasovskaya.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={streets.streetDeribasovskaya.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={streets.streetDeribasovskaya.warInfo}
         />
 
         <AttractionsCard
@@ -47,14 +40,8 @@ export default function Street() {
           descriptionP2={streets.streetPrimorskiy.descriptionP2}
           imageSrc={streetPrimorskiy}
           imagePosition="right"
-          gps={gps}
           address={streets.streetPrimorskiy.address}
           url={streets.streetPrimorskiy.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={streets.streetPrimorskiy.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={streets.streetPrimorskiy.warInfo}
         />
       </div>
     </div>

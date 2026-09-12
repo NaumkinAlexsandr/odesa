@@ -1,6 +1,6 @@
 import { IContentArticle } from "@/type/content";
 
-import one from "@/images/news/09.2025/news_23.09.25/129338.jpg";
+import one from "@/img/news/09.2025/news_23.09.25/129338.webp";
 import { news_23_Slider } from "./news_23_Slider";
 
 export const news_23: IContentArticle = {

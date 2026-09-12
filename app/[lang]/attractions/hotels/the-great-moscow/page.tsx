@@ -1,56 +1,31 @@
-"use client";
-import { useLanguage } from "@/hooks/useLanguage";
-import SliderHistory from "@/components/common/sliders/SliderHistory";
-import { h1_georgia, p } from "@/fonts/fontSize";
-import Paragraph from "@/ui/Paragraph";
-import ImageWrapper from "@/ui/ImageWrapper";
-import {
-  moskovskaya,
-  imgAlt,
-  imgСaption,
-} from "@/lib/translations/attractions/hotels/moskovskaya";
-import { getMoscowSlides } from "@/lib/translations/attractions/hotels/getMoscowSlides";
-import one from "@/public/images/attractions/hotels/moskovskaya/moskovskaya-1.jpg";
-import ArrowUp from "@/components/common/ui/ArrowUp";
+import { Metadata } from "next";
+import GreatMoscowClient from "./GreatMoscowClient";
+import { moskovskaya } from "@/lib/translations/attractions/hotels/moskovskaya";
 
-export default function TheGreatMoscow() {
-  const { currentLang } = useLanguage();
+type Props = {
+  params: Promise<{ lang: string }>;
+};
 
-  const hotelMoscow = moskovskaya[currentLang as keyof typeof moskovskaya];
-  const alt = imgAlt[currentLang as keyof typeof imgAlt];
-  const caption = imgСaption[currentLang as keyof typeof imgСaption];
-  const sliderOne = getMoscowSlides(currentLang);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const currentLang = (lang as "ua" | "ru" | "en") || "ua";
+  const data = moskovskaya[currentLang] || moskovskaya.ua;
 
-  return (
-    <div className="w-full pt-15">
-      <div className="clearfix">
-        <h1 className={`${h1_georgia} my-2`}>{hotelMoscow.title}</h1>
+  return {
+    title: `${data.title} — Пам'ятки Одеси`,
+    description: data.one
+      ? data.one.slice(0, 160)
+      : "Історичний готель Велика Московська в Одесі.",
+    openGraph: {
+      title: data.title,
+      description: data.one
+        ? data.one.slice(0, 160)
+        : "Готель Велика Московська в Одесі",
+      images: ["/images/attractions/hotels/moskovskaya/moskovskaya-1.jpg"],
+    },
+  };
+}
 
-        <ImageWrapper src={one} alt={alt.one} caption={caption.one} />
-
-        <div className="w-full">
-          <Paragraph className={p} text={hotelMoscow.one} />
-          <Paragraph className={p} text={hotelMoscow.two} />
-          <Paragraph className={p} text={hotelMoscow.three} />
-          <Paragraph className={p} text={hotelMoscow.four} />
-        </div>
-
-        <SliderHistory
-          slides={sliderOne}
-          swiperId="first-theatre"
-          floatDirection="float-right"
-        />
-
-        <div className="w-full">
-          <Paragraph className={p} text={hotelMoscow.five} />
-          <Paragraph className={p} text={hotelMoscow.six} />
-          <Paragraph className={p} text={hotelMoscow.seven} />
-          <Paragraph className={p} text={hotelMoscow.eight} />
-          <Paragraph className={p} text={hotelMoscow.nine} />
-          <Paragraph className={p} text={hotelMoscow.ten} />
-        </div>
-      </div>
-      <ArrowUp />
-    </div>
-  );
+export default function Page() {
+  return <GreatMoscowClient />;
 }

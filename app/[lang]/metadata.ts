@@ -4,7 +4,6 @@ import {
   allowedLangs,
   LangKey,
 } from "@/lib/translations/metadata";
-import { getCleanLang } from "@/utils/getCleanLang";
 
 export async function generateMetadata({
   params,
@@ -15,7 +14,9 @@ export async function generateMetadata({
   const currentLang = allowedLangs.includes(lang as LangKey)
     ? (lang as LangKey)
     : "ua";
-  const t = metadataTranslations[currentLang];
+
+  // Берем базовые метаданные главной страницы (home)
+  const t = metadataTranslations[currentLang].home;
 
   const siteNames = {
     ua: "Місто Одеса",

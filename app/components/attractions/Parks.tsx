@@ -1,25 +1,21 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-// import call from "@/images/icons/сardAttractions/call.png";
-// import info from "@/images/icons/сardAttractions/information.png";
-// import war from "@/images/icons/сardAttractions/war.png";
-import parkCity from "@/images/attractions/parks/parkCity.jpg";
-import parkShevchenko from "@/images/attractions/parks/parkShevchenko.jpg";
+import parkCity from "@/img/attractions/parks/parkCity/parkCity.webp";
+import parkShevchenko from "@/img/attractions/parks/parkShevchenko/parkShevchenko.webp";
 import {
   parksTranslations,
   sectionParks,
 } from "@/lib/translations/attractions/parks/parks";
 
 export default function Parks() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const parks =
-    parksTranslations[currentLang as keyof typeof parksTranslations];
-
-  const titleParks = sectionParks[currentLang as keyof typeof sectionParks];
+  const parks = parksTranslations[currentLang] || parksTranslations.ua;
+  const titleParks = sectionParks[currentLang] || sectionParks.ua;
 
   return (
     <div id="parks" className="scroll-mt-[65px]">
@@ -32,14 +28,8 @@ export default function Parks() {
           descriptionP1={parks.parkCity.descriptionP1}
           imageSrc={parkCity}
           imagePosition="left"
-          gps={gps}
           address={parks.parkCity.address}
           url={parks.parkCity.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={parks.parkCity.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={parks.parkCity.warInfo}
         />
 
         <AttractionsCard
@@ -48,14 +38,8 @@ export default function Parks() {
           descriptionP2={parks.parkShevchenko.descriptionP2}
           imageSrc={parkShevchenko}
           imagePosition="right"
-          gps={gps}
           address={parks.parkShevchenko.address}
           url={parks.parkShevchenko.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={parks.parkShevchenko.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={parks.parkShevchenko.warInfo}
         />
       </div>
     </div>

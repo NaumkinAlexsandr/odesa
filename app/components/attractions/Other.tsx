@@ -1,48 +1,37 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-// import call from "@/images/icons/сardAttractions/call.png";
-// import info from "@/images/icons/сardAttractions/information.png";
-import war from "@/images/icons/сardAttractions/war.png";
-import bridgeMother from "@/images/attractions/other/bridgeMother/bridgeMother.jpg";
-import port from "@/images/attractions/other/port/port.jpg";
-import privoz from "@/images/attractions/other/privoz/privozTwo.jpg";
-import catacombs from "@/images/attractions/other/catacombs/catacombs.jpg";
+import bridgeMother from "@/img/attractions/other/bridgeMother/bridgeMother.webp";
+import port from "@/img/attractions/other/port/port.webp";
+import privoz from "@/img/attractions/other/privoz/privozTwo.webp";
+import catacombs from "@/img/attractions/other/catacombs/catacombs.webp";
 import {
   otherTranslations,
   sectionOther,
 } from "@/lib/translations/attractions/other/other";
 
 export default function Other() {
-  const { currentLang, langPrefix } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const other =
-    otherTranslations[currentLang as keyof typeof otherTranslations];
-
-  const titleOther = sectionOther[currentLang as keyof typeof sectionOther];
+  const other = otherTranslations[currentLang] || otherTranslations.ua;
+  const titleOther = sectionOther[currentLang] || sectionOther.ua;
 
   return (
     <div id="other" className="scroll-mt-[65px]">
-      {/* <h2 className="mt-8 mb-4 text-center text-2xl font-bold">
-        {other.bridgeMother.category}
-      </h2> */}
+      <h2 className="my-1 text-center text-2xl font-bold">
+        {titleOther.sectionName}
+      </h2>
       <div className="flex flex-col space-y-4">
         <AttractionsCard
           title={other.bridgeMother.title}
           descriptionP1={other.bridgeMother.descriptionP1}
           imageSrc={bridgeMother}
           imagePosition="left"
-          gps={gps}
           address={other.bridgeMother.address}
           url={other.bridgeMother.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/attractions/theaters/odesa-philharmonic`}
-          // moreInfo={other.bridgeMother.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={other.bridgeMother.warInfo}
         />
 
         <AttractionsCard
@@ -50,14 +39,9 @@ export default function Other() {
           descriptionP1={other.port.descriptionP1}
           imageSrc={port}
           imagePosition="right"
-          gps={gps}
           address={other.port.address}
           url={other.port.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/attractions/theaters/odesa-philharmonic`}
-          // moreInfo={other.port.moreInfo}
-          war={war}
-          warURl={`${langPrefix}/destruction/strike-on-marine-terminal-and-hotel-odesa`}
+          warURl={`/${currentLang}/destruction/strike-on-marine-terminal-and-hotel-odesa`}
           warInfo={other.port.warInfo}
         />
 
@@ -66,15 +50,8 @@ export default function Other() {
           descriptionP1={other.privoz.descriptionP1}
           imageSrc={privoz}
           imagePosition="left"
-          gps={gps}
           address={other.privoz.address}
           url={other.privoz.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/attractions/theaters/odesa-philharmonic`}
-          // moreInfo={other.privoz.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={other.privoz.warInfo}
         />
 
         <AttractionsCard
@@ -83,15 +60,8 @@ export default function Other() {
           descriptionP2={other.catacombs.descriptionP2}
           imageSrc={catacombs}
           imagePosition="right"
-          gps={gps}
           address={other.catacombs.address}
           url={other.catacombs.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/attractions/theaters/odesa-philharmonic`}
-          // moreInfo={other.catacombs.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={other.catacombs.warInfo}
         />
       </div>
     </div>

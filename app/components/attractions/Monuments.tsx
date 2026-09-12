@@ -1,59 +1,46 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
-import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-// import info from "@/images/icons/сardAttractions/information.png";
-// import war from "@/images/icons/сardAttractions/war.png";
-import monumentDuke from "@/images/attractions/monuments/duke/monumentDuke.jpg";
-import stairsPotemkinskaya from "@/images/attractions/monuments/potemkinskaya/stairsPotemkinskaya.jpg";
+import { useParams } from "next/navigation";
+import AttractionsCard from "@/common/cards/AttractionsCard";
+import nemo from "@/img/attractions/leisure/nemo/nemo.webp";
+import arkadia from "@/img/attractions/leisure/arkadia/arkadiaTwo.webp";
 import {
-  monumentsTranslations,
-  sectionMonuments,
-} from "@/lib/translations/attractions/monuments/monuments";
+  leisuresTranslations,
+  sectionLeisures,
+} from "@/lib/translations/attractions/leisure/leisure";
 
-export default function Monuments() {
-  const { currentLang } = useLanguage();
+export default function Leisure() {
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const monuments =
-    monumentsTranslations[currentLang as keyof typeof monumentsTranslations];
-
-  const titleMonuments =
-    sectionMonuments[currentLang as keyof typeof sectionMonuments];
+  const leisures = leisuresTranslations[currentLang] || leisuresTranslations.ua;
+  const titleLeisures = sectionLeisures[currentLang] || sectionLeisures.ua;
 
   return (
-    <div id="monuments" className="scroll-mt-[65px]">
+    <div id="leisure" className="scroll-mt-[65px]">
+      <h2 className="my-1 text-center text-2xl font-bold">
+        {titleLeisures.sectionName}
+      </h2>
       <div className="flex flex-col space-y-4">
         <AttractionsCard
-          title={monuments.monumentDuke.title}
-          descriptionP1={monuments.monumentDuke.descriptionP1}
-          descriptionP2={monuments.monumentDuke.descriptionP2}
-          imageSrc={monumentDuke}
+          title={leisures.nemo.title}
+          descriptionP1={leisures.nemo.descriptionP1}
+          descriptionP2={leisures.nemo.descriptionP2}
+          imageSrc={nemo}
           imagePosition="left"
-          gps={gps}
-          address={monuments.monumentDuke.address}
-          url={monuments.monumentDuke.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={monuments.monumentDuke.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={monuments.monumentDuke.warInfo}
+          address={leisures.nemo.address}
+          phoneNumber={leisures.nemo.phoneNumber}
+          url={leisures.nemo.urlGPS}
         />
 
         <AttractionsCard
-          title={monuments.stairsPotemkinskaya.title}
-          descriptionP1={monuments.stairsPotemkinskaya.descriptionP1}
-          descriptionP2={monuments.stairsPotemkinskaya.descriptionP2}
-          imageSrc={stairsPotemkinskaya}
+          title={leisures.arkadia.title}
+          descriptionP1={leisures.arkadia.descriptionP1}
+          imageSrc={arkadia}
           imagePosition="right"
-          gps={gps}
-          address={monuments.stairsPotemkinskaya.address}
-          url={monuments.stairsPotemkinskaya.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={monuments.stairsPotemkinskaya.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={monuments.stairsPotemkinskaya.warInfo}
+          address={leisures.arkadia.address}
+          url={leisures.arkadia.urlGPS}
         />
       </div>
     </div>

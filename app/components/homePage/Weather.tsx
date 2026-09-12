@@ -7,12 +7,12 @@ import { airQuality } from "@/lib/weather/airQuality";
 import { weatherIndicators } from "@/lib/weather/weatherIndicators";
 import WeatherCard from "@/components/common/cards/WeatherCard";
 
-import pressure from "@/public/images/weather/weatherIcon/pressure.png";
-import humidity from "@/public/images/weather/weatherIcon/humidity.png";
-import clouds from "@/public/images/weather/weatherIcon/clouds.png";
-import rain from "@/public/images/weather/weatherIcon/rain.png";
-import snow from "@/public/images/weather/weatherIcon/snow.png";
-import temp from "@/public/images/weather/weatherIcon/temp.png";
+import pressure from "@/img/weather/weatherIcon/pressure.png";
+import humidity from "@/img/weather/weatherIcon/humidity.png";
+import clouds from "@/img/weather/weatherIcon/clouds.png";
+import rain from "@/img/weather/weatherIcon/rain.png";
+import snow from "@/img/weather/weatherIcon/snow.png";
+import temp from "@/img/weather/weatherIcon/temp.png";
 import { p } from "@/fonts/fontSize";
 import AQI from "../common/cards/AQI";
 
@@ -166,7 +166,6 @@ export default function WeatherDisplay() {
   return (
     <>
       <div className="flex w-[225px] flex-col gap-3 rounded-lg border border-gray-100 bg-white p-1 text-gray-900 shadow-md">
-        {/* Добавил text-gray-900 сюда */}
         <div className="flex flex-col gap-1 rounded-lg border border-gray-200 p-1">
           <div>
             {data.weatherIcon && (
@@ -176,14 +175,9 @@ export default function WeatherDisplay() {
             <div
               className={`flex h-[45px] w-full items-center justify-center p-1`}
             >
-              <Image
-                className="h-[40px] w-[40px]"
-                src={temp}
-                alt="Погодная иконка"
-              />
+              <Image className="h-10 w-10" src={temp} alt="Погодная иконка" />
 
               <span className="text-[40px] font-extrabold text-gray-900">
-                {/* Добавил явный цвет и жирность */}
                 {data.temp ? `${Math.round(data.temp)} °C` : "N/A"}
               </span>
             </div>

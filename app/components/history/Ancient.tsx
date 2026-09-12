@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import { odessaHistory } from "@/lib/translations/history/index";
 import { imgСaption } from "@/lib/translations/history/imgСaption";
 import { imgAlt } from "@/lib/translations/history/imgAlt";
@@ -12,12 +12,14 @@ import istrion_two from "@/img/history/ancient/istrion_two.webp";
 import { useAllImageSlides } from "./AllImageSlide";
 
 export default function Ancient() {
-  const { currentLang } = useLanguage();
-  const { istrion } = useAllImageSlides();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const history = odessaHistory[currentLang as keyof typeof odessaHistory];
-  const caption = imgСaption[currentLang as keyof typeof imgСaption];
-  const alt = imgAlt[currentLang as keyof typeof imgAlt];
+  const history = odessaHistory[currentLang] || odessaHistory.ua;
+  const caption = imgСaption[currentLang] || imgСaption.ua;
+  const alt = imgAlt[currentLang] || imgAlt.ua;
+
+  const { istrion } = useAllImageSlides();
 
   return (
     <div className="w-full min-w-0 overflow-hidden">

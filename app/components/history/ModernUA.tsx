@@ -1,22 +1,23 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import { odessaHistory } from "@/lib/translations/history/index";
-import { imgСaption } from "@/lib/translations/history/imgСaption";
 import SliderHistory from "@/components/common/sliders/SliderHistory";
 import SectionWrapper from "@/ui/SectionWrapper";
 import { useAllImageSlides } from "./AllImageSlide";
 
 export default function ModernUA() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const history = odessaHistory[currentLang as keyof typeof odessaHistory];
-  const caption = imgСaption[currentLang as keyof typeof imgСaption];
+  const history = odessaHistory[currentLang] || odessaHistory.ua;
+
   const { odessa_1990s, odessa_2000s, odessa_2014, odessa_2020, odessa_2024 } =
     useAllImageSlides();
 
   return (
-    <div className="mb-5 w-full">
+    <div className="mb-5 w-full min-w-0 overflow-hidden">
       <div className="clearfix">
         <SectionWrapper
           id_h1="modern_ukr_title_1"

@@ -2,10 +2,10 @@
 import { IImagWrapper } from "@/type/interface";
 import { imgAlt, imgСaption } from "./odesa-philharmonic";
 
-import one from "@/public/images/attractions/theatre/philharmonic/philharmonic_one.jpg";
-import two from "@/public/images/attractions/theatre/philharmonic/philharmonic_two.jpg";
-import three from "@/public/images/attractions/theatre/philharmonic/philharmonic_three.jpg";
-import four from "@/public/images/attractions/theatre/philharmonic/philharmonic_four.jpg";
+import one from "@/img/attractions/theatre/philharmonic/philharmonic_one.webp";
+import two from "@/img/attractions/theatre/philharmonic/philharmonic_two.webp";
+import three from "@/img/attractions/theatre/philharmonic/philharmonic_three.webp";
+import four from "@/img/attractions/theatre/philharmonic/philharmonic_four.webp";
 
 export const getPhilharmonicSlides = (currentLang: string): IImagWrapper[] => {
   const alt = imgAlt[currentLang as keyof typeof imgAlt];

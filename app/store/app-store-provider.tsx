@@ -12,7 +12,6 @@ interface AppState {
 
 type AppStore = ReturnType<typeof createAppStore>;
 
-// Функция создания изолированного стора для текущего сеанса
 const createAppStore = (initProps: {
   theme: "light" | "dark";
   lang: string;
@@ -57,9 +56,6 @@ export function AppStoreProvider({
   theme: "light" | "dark";
   lang: string;
 }) {
-  // Инициализируем сам стор ОДИН раз через ленивый useState.
-  // React 19 гарантирует, что эта функция выполнится строго один раз при создании провайдера,
-  // при этом мы не трогаем рефы во время рендера и не вызываем сторонних сайд-эффектов.
   const [store] = useState(() => createAppStore({ theme, lang }));
 
   return (
@@ -69,7 +65,6 @@ export function AppStoreProvider({
   );
 }
 
-// Кастомный хук для безопасного вызова в компонентах
 export function useAppStore<T>(selector: (state: AppState) => T): T {
   const context = useContext(AppStoreContext);
   if (!context) {

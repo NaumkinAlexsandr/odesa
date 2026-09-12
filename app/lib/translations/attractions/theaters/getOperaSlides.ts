@@ -2,18 +2,18 @@
 import { IImagWrapper } from "@/type/interface";
 import { imgAlt, imgСaption } from "./odesa-opera-house";
 
-import firstTheatre from "@/public/images/attractions/theatre/opera/first_theatre.png";
-import fire from "@/public/images/attractions/theatre/opera/fire.png";
-import newTheatreOne from "@/public/images/attractions/theatre/opera/new_theatre_one.jpg";
-import newTheatreTwo from "@/public/images/attractions/theatre/opera/new_theatre_two.jpg";
-import newTheatreThree from "@/public/images/attractions/theatre/opera/new_theatre_three.jpeg";
-import newTheatreFour from "@/public/images/attractions/theatre/opera/new_theatre_four.png";
-import newTheatreFive from "@/public/images/attractions/theatre/opera/new_theatre_five.jpg";
-import hall from "@/public/images/attractions/theatre/opera/hall_one.jpg";
-import hallTwo from "@/public/images/attractions/theatre/opera/hall_two.jpg";
-import ceiling from "@/public/images/attractions/theatre/opera/ceiling.jpg";
-import foyer from "@/public/images/attractions/theatre/opera/foyer_one.jpg";
-import foyerTwo from "@/public/images/attractions/theatre/opera/foyer_two.jpg";
+import firstTheatre from "@/img/attractions/theatre/opera/first_theatre.webp";
+import fire from "@/img/attractions/theatre/opera/fire.webp";
+import newTheatreOne from "@/img/attractions/theatre/opera/new_theatre_one.webp";
+import newTheatreTwo from "@/img/attractions/theatre/opera/new_theatre_two.webp";
+import newTheatreThree from "@/img/attractions/theatre/opera/new_theatre_three.webp";
+import newTheatreFour from "@/img/attractions/theatre/opera/new_theatre_four.webp";
+import newTheatreFive from "@/img/attractions/theatre/opera/new_theatre_five.webp";
+import hall from "@/img/attractions/theatre/opera/hall_one.webp";
+import hallTwo from "@/img/attractions/theatre/opera/hall_two.webp";
+import ceiling from "@/img/attractions/theatre/opera/ceiling.webp";
+import foyer from "@/img/attractions/theatre/opera/foyer_one.webp";
+import foyerTwo from "@/img/attractions/theatre/opera/foyer_two.webp";
 
 interface IOperaSlides {
   sliderOne: IImagWrapper[];

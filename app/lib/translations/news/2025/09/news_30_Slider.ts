@@ -1,10 +1,10 @@
-import one from "@/images/news/09.2025/news_30.09.25/129762.jpeg";
-import two from "@/images/news/09.2025/news_30.09.25/129563.jpeg";
-import three from "@/images/news/09.2025/news_30.09.25/129731.jpeg";
-import four from "@/images/news/09.2025/news_30.09.25/129737.jpeg";
-import five from "@/images/news/09.2025/news_30.09.25/129750.jpeg";
-import six from "@/images/news/09.2025/news_30.09.25/129757.jpeg";
-import seven from "@/images/news/09.2025/news_30.09.25/129758.jpeg";
+import one from "@/img/news/09.2025/news_30.09.25/129762.webp";
+import two from "@/img/news/09.2025/news_30.09.25/129563.webp";
+import three from "@/img/news/09.2025/news_30.09.25/129731.webp";
+import four from "@/img/news/09.2025/news_30.09.25/129737.webp";
+import five from "@/img/news/09.2025/news_30.09.25/129750.webp";
+import six from "@/img/news/09.2025/news_30.09.25/129757.webp";
+import seven from "@/img/news/09.2025/news_30.09.25/129758.webp";
 import { StaticImageData } from "next/image";
 import { ContentSliderType } from "@/type/content";
 

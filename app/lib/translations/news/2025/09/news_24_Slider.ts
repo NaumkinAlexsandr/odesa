@@ -1,7 +1,7 @@
-import one from "@/images/news/09.2025/news_24.09.25/129349.jpg";
-import two from "@/images/news/09.2025/news_24.09.25/129346.jpg";
-import three from "@/images/news/09.2025/news_24.09.25/129347.jpg";
-import four from "@/images/news/09.2025/news_24.09.25/129348.jpg";
+import one from "@/img/news/09.2025/news_24.09.25/129349.webp";
+import two from "@/img/news/09.2025/news_24.09.25/129346.webp";
+import three from "@/img/news/09.2025/news_24.09.25/129347.webp";
+import four from "@/img/news/09.2025/news_24.09.25/129348.webp";
 import { StaticImageData } from "next/image";
 import { ContentSliderType } from "@/type/content";
 

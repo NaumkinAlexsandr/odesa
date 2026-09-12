@@ -2,18 +2,18 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import Sidebar from "@/ui/Sidebar";
 import { ISidebarSection } from "@/type/interface";
 import { slidebarHistory } from "@/lib/translations/history/slidebarHistory";
-import right from "@/public/images/icons/arrow-right-2.png";
+import right from "@/img/icons/arrow-right-2.png";
 
-export default function SidebarHystory() {
+export default function SidebarHistory() {
   const [isOpen, setIsOpen] = useState(false);
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as keyof typeof slidebarHistory) || "ua";
 
-  const sectionName =
-    slidebarHistory[currentLang as keyof typeof slidebarHistory];
+  const sectionName = slidebarHistory[currentLang] || slidebarHistory.ua;
 
   const historySections: ISidebarSection[] = [
     { id: "ancient_title_1", titleSection: sectionName.ancient_title_1 },
@@ -42,13 +42,17 @@ export default function SidebarHystory() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
     };
+
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
     }
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -61,7 +65,7 @@ export default function SidebarHystory() {
 
   return (
     <>
-      {/* Декстопная версия */}
+      {/* Десктопная версия */}
       <div className="mr-4 hidden lg:block lg:w-1/4">
         <Sidebar sections={historySections} title={sectionName.title} />
       </div>
@@ -72,7 +76,7 @@ export default function SidebarHystory() {
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="fixed top-1/2 left-0 z-40 flex -translate-y-1/2 items-center justify-center rounded-r-full border border-l-0 border-zinc-200 bg-white/90 p-2 shadow-lg backdrop-blur-md transition-all hover:bg-white hover:pr-3 hover:pl-3 active:scale-95 dark:border-zinc-800 dark:bg-zinc-900/90 dark:hover:bg-zinc-900"
+          className="fixed top-1/2 left-0 z-40 flex -translate-y-1/2 items-center justify-center rounded-r-full border border-l-0 border-zinc-200 bg-white/90 p-2 shadow-lg backdrop-blur-md transition-all hover:bg-white hover:px-3 active:scale-95 dark:border-zinc-800 dark:bg-zinc-900/90 dark:hover:bg-zinc-900"
           aria-label={sectionName.title}
           title={sectionName.title}
         >

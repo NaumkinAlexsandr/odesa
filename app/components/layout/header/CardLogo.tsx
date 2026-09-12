@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import gerb from "@/images/icons/logo/gerb.png";
-import logo from "@/images/icons/logo/logo.png";
+import gerb from "@/img/icons/logo/gerb.png";
+import logo from "@/img/icons/logo/logo.png";
 
 export default function CardLogo() {
   return (

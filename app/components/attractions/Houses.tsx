@@ -1,27 +1,23 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-// import call from "@/images/icons/сardAttractions/call.png";
-// import info from "@/images/icons/сardAttractions/information.png";
-// import war from "@/images/icons/сardAttractions/war.png";
-import houseWall from "@/images/attractions/houses/wall/houseWall.jpg";
-import houseFalc from "@/images/attractions/houses/falc/houseFalc.jpg";
-import palaceVorontsov from "@/images/attractions/houses/vorontsov/palaceVorontsov.jpg";
-import palaceShah from "@/images/attractions/houses/shah/palaceShah.jpg";
+import houseWall from "@/img/attractions/houses/wall/houseWall.webp";
+import houseFalc from "@/img/attractions/houses/falc/houseFalc.webp";
+import palaceVorontsov from "@/img/attractions/houses/vorontsov/palaceVorontsov.webp";
+import palaceShah from "@/img/attractions/houses/shah/palaceShah.webp";
 import {
   housesTranslations,
   sectionHouses,
 } from "@/lib/translations/attractions/houses/houses";
 
 export default function Houses() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const houses =
-    housesTranslations[currentLang as keyof typeof housesTranslations];
-
-  const titleHouses = sectionHouses[currentLang as keyof typeof sectionHouses];
+  const houses = housesTranslations[currentLang] || housesTranslations.ua;
+  const titleHouses = sectionHouses[currentLang] || sectionHouses.ua;
 
   return (
     <div id="houses" className="scroll-mt-[65px]">
@@ -34,14 +30,9 @@ export default function Houses() {
           descriptionP1={houses.houseWall.descriptionP1}
           imageSrc={houseWall}
           imagePosition="left"
-          gps={gps}
           address={houses.houseWall.address}
           url={houses.houseWall.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
           moreInfo={houses.houseWall.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={houses.houseWall.warInfo}
         />
 
         <AttractionsCard
@@ -49,14 +40,9 @@ export default function Houses() {
           descriptionP1={houses.houseFalc.descriptionP1}
           imageSrc={houseFalc}
           imagePosition="right"
-          gps={gps}
           address={houses.houseFalc.address}
           url={houses.houseFalc.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
           moreInfo={houses.houseFalc.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={houses.houseFalc.warInfo}
         />
 
         <AttractionsCard
@@ -64,14 +50,9 @@ export default function Houses() {
           descriptionP1={houses.palaceVorontsov.descriptionP1}
           imageSrc={palaceVorontsov}
           imagePosition="left"
-          gps={gps}
           address={houses.palaceVorontsov.address}
           url={houses.palaceVorontsov.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
           moreInfo={houses.palaceVorontsov.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={houses.palaceVorontsov.warInfo}
         />
 
         <AttractionsCard
@@ -79,14 +60,9 @@ export default function Houses() {
           descriptionP1={houses.palaceShah.descriptionP1}
           imageSrc={palaceShah}
           imagePosition="right"
-          gps={gps}
           address={houses.palaceShah.address}
           url={houses.palaceShah.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
           moreInfo={houses.palaceShah.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={houses.palaceShah.warInfo}
         />
       </div>
     </div>

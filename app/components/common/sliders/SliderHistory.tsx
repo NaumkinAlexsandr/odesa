@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import ImageCaption from "@/components/common/ui/ImageCaption";
+import ImageCaption from "@/ui/ImageCaption";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { IFloatDirection, ISliderHistoryProps } from "@/type/interface";
 import { useLanguage } from "@/hooks/useLanguage";
-import left from "@/public/images/icons/arrow-left-2.png";
-import right from "@/public/images/icons/arrow-right-2.png";
+import left from "@/img/icons/arrow-left-2.png";
+import right from "@/img/icons/arrow-right-2.png";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -108,7 +108,7 @@ export default function SliderHistory({
 
   const containerClasses = `relative ${responsiveFloat} my-4 mx-auto w-[300px] sm:w-[400px] md:w-[500px] lg:w-5/12 overflow-hidden p-2`;
   const navBtnClasses =
-    "absolute top-1/2 z-10 -translate-y-1/2 p-1.5 opacity-60 transition-opacity duration-300 hover:opacity-100 disabled:opacity-20 cursor-pointer";
+    "absolute top-1/2 z-10 -translate-y-1/2 p-1.5 opacity-80 transition-opacity duration-300 hover:opacity-100 disabled:opacity-20 cursor-pointer";
 
   return (
     <>
@@ -177,6 +177,7 @@ export default function SliderHistory({
           </Swiper>
         </div>
 
+        {/* Стрелки основного слайдера — делаем темными через brightness-0 для светлого фона страницы */}
         <button
           ref={(node) => setPrevEl(node)}
           type="button"
@@ -188,7 +189,7 @@ export default function SliderHistory({
             alt="Previous"
             width={28}
             height={28}
-            className="h-7 w-7 object-contain"
+            className="h-7 w-7 object-contain brightness-0"
           />
         </button>
 
@@ -203,7 +204,7 @@ export default function SliderHistory({
             alt="Next"
             width={28}
             height={28}
-            className="h-7 w-7 object-contain"
+            className="h-7 w-7 object-contain brightness-0"
           />
         </button>
       </div>
@@ -211,14 +212,14 @@ export default function SliderHistory({
       {/* Lightbox / Fullscreen Modal */}
       {isFullscreen && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4 backdrop-blur-md"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/10 p-4 backdrop-blur-md"
           onClick={() => setIsFullscreen(false)}
         >
           <button
             type="button"
             onClick={() => setIsFullscreen(false)}
             aria-label={t.close}
-            className="absolute top-4 right-4 z-50 cursor-pointer rounded-full bg-white/10 p-2.5 text-white backdrop-blur-md transition-colors hover:bg-white/20"
+            className="text-muted absolute top-4 right-4 z-50 cursor-pointer rounded-full p-2.5 transition-colors"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -240,18 +241,19 @@ export default function SliderHistory({
             className="relative flex h-[88vh] w-full max-w-4xl flex-col items-center justify-center px-8 md:px-12"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Стрелки модалки — чистый белый цвет поверх тёмно-серого bg-zinc-900/90 */}
             <button
               ref={(node) => setModalPrevEl(node)}
               type="button"
               aria-label="Предыдущий слайд"
-              className="absolute top-1/2 left-0 z-20 -translate-y-1/2 cursor-pointer p-2 opacity-70 transition-all hover:scale-110 hover:opacity-100"
+              className="absolute top-1/2 left-0 z-20 -translate-y-1/2 cursor-pointer p-2 opacity-80 transition-all hover:scale-110 hover:opacity-100"
             >
               <Image
                 src={left}
                 alt="Previous"
                 width={36}
                 height={36}
-                className="h-9 w-9 object-contain invert filter"
+                className="h-9 w-9 object-contain"
               />
             </button>
 
@@ -259,14 +261,14 @@ export default function SliderHistory({
               ref={(node) => setModalNextEl(node)}
               type="button"
               aria-label="Следующий слайд"
-              className="absolute top-1/2 right-0 z-20 -translate-y-1/2 cursor-pointer p-2 opacity-70 transition-all hover:scale-110 hover:opacity-100"
+              className="absolute top-1/2 right-0 z-20 -translate-y-1/2 cursor-pointer p-2 opacity-80 transition-all hover:scale-110 hover:opacity-100"
             >
               <Image
                 src={right}
                 alt="Next"
                 width={36}
                 height={36}
-                className="h-9 w-9 object-contain invert filter"
+                className="h-9 w-9 object-contain"
               />
             </button>
 
@@ -296,7 +298,7 @@ export default function SliderHistory({
                     />
                   </div>
                   {slide.caption && (
-                    <div className="mx-auto mt-3 w-full max-w-2xl px-4 text-center text-sm text-white/90 md:text-base">
+                    <div className="text-muted mx-auto mt-3 w-full max-w-2xl px-4 text-center text-sm md:text-base">
                       {slide.caption}
                     </div>
                   )}

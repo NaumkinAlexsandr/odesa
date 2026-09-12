@@ -12,6 +12,3 @@ export const homeMetadata = {
     description: "Global description for the entire site.",
   },
 };
-
-export type LangKey = keyof typeof homeMetadata;
-export const allowedLangs = Object.keys(homeMetadata) as LangKey[];

@@ -1,14 +1,14 @@
 import { StaticImageData } from "next/image";
 import { ContentSliderType } from "@/type/content";
 
-import one from "@/images/destruction/2023/23.07/destruction_01.jpg";
-import two from "@/images/destruction/2023/23.07/destruction_02.jpg";
-import three from "@/images/destruction/2023/23.07/destruction_03.jpeg";
-import four from "@/images/destruction/2023/23.07/destruction_04.jpg";
-import five from "@/images/destruction/2023/23.07/destruction_05.jpg";
-import six from "@/images/destruction/2023/23.07/destruction_06.jpg";
-import seven from "@/images/destruction/2023/23.07/destruction_07.jpg";
-import eight from "@/images/destruction/2023/23.07/destruction_08.jpg";
+import one from "@/img/destruction/2023/23.07/destruction_01.webp";
+import two from "@/img/destruction/2023/23.07/destruction_02.webp";
+import three from "@/img/destruction/2023/23.07/destruction_03.webp";
+import four from "@/img/destruction/2023/23.07/destruction_04.webp";
+import five from "@/img/destruction/2023/23.07/destruction_05.webp";
+import six from "@/img/destruction/2023/23.07/destruction_06.webp";
+import seven from "@/img/destruction/2023/23.07/destruction_07.webp";
+import eight from "@/img/destruction/2023/23.07/destruction_08.webp";
 
 export const dest_23_07_Slider: ContentSliderType = [
   {

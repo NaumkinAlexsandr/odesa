@@ -1,6 +1,6 @@
 import { IContentArticle } from "@/type/content";
 import { dest_31_01_01_Slider } from "./dest_31_01_01_Slider";
-import one from "@/images/destruction/2025/31.01/destruction_01.jpg";
+import one from "@/img/destruction/2025/31.01/destruction_01.webp";
 
 export const dest_31_01_02: IContentArticle = {
   id: `philharmonic-hall-strike`,

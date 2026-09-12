@@ -1,13 +1,13 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
-import ImageCaption from "@/components/common/ui/ImageCaption";
+import ImageCaption from "@/ui/ImageCaption";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { IFloatDirection, ISliderProps } from "@/type/interface";
 import { Swiper as SwiperCore } from "swiper/types";
-import left from "@/public/images/icons/arrow-left-2.png";
-import right from "@/public/images/icons/arrow-right-2.png";
+import left from "@/img/icons/arrow-left-2.png";
+import right from "@/img/icons/arrow-right-2.png";
 import { IContentSlide, ILangProps } from "@/type/content";
 
 import "swiper/css";

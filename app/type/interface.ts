@@ -3,6 +3,10 @@ import { ContentSliderType, IContentTranslation } from "./content";
 
 export type Lang = "ua" | "en" | "ru";
 
+export type Props = {
+  params: Promise<{ lang: string }>;
+};
+
 // ---------- wrappers ----------
 export type FloatDirection = "float-left" | "float-right" | "float-none";
 

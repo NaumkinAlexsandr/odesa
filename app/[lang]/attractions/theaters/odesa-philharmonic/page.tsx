@@ -1,57 +1,31 @@
-"use client";
-import { useLanguage } from "@/hooks/useLanguage";
-import SliderHistory from "@/components/common/sliders/SliderHistory";
-import { h1_georgia, p } from "@/fonts/fontSize";
-import Paragraph from "@/ui/Paragraph";
+import { Metadata } from "next";
+import PhilharmonicClient from "./PhilharmonicClient";
 import { odesaPhilharmonic } from "@/lib/translations/attractions/theaters/odesa-philharmonic";
-import { getPhilharmonicSlides } from "@/lib/translations/attractions/theaters/getPhilharmonicSlides";
-import ImageWrapper from "@/components/ui/ImageWrapper";
 
-import philharmonic from "@/img/history/imperial/philharmonic.webp";
-import { imgСaption } from "@/lib/translations/history/imgСaption";
-import { imgAlt } from "@/lib/translations/history/imgAlt";
-import ArrowUp from "@/components/common/ui/ArrowUp";
+type Props = {
+  params: Promise<{ lang: string }>;
+};
 
-export default function Philharmonic() {
-  const { currentLang } = useLanguage();
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const currentLang = (lang as "ua" | "ru" | "en") || "ua";
+  const data = odesaPhilharmonic[currentLang] || odesaPhilharmonic.ua;
 
-  const OP = odesaPhilharmonic[currentLang as keyof typeof odesaPhilharmonic];
-  const sliderOne = getPhilharmonicSlides(currentLang);
-  const caption = imgСaption[currentLang as keyof typeof imgСaption];
-  const alt = imgAlt[currentLang as keyof typeof imgAlt];
+  return {
+    title: `${data.title} — Пам'ятки Одеси`,
+    description: data.first
+      ? data.first.slice(0, 160)
+      : "Одеська обласна філармонія ім. Давида Ойстраха.",
+    openGraph: {
+      title: data.title,
+      description: data.first
+        ? data.first.slice(0, 160)
+        : "Одеська обласна філармонія",
+      images: ["/img/history/imperial/philharmonic.webp"],
+    },
+  };
+}
 
-  return (
-    <div className="w-full pt-15">
-      <div className="clearfix">
-        <h1 className={`${h1_georgia} my-2`}>{OP.title}</h1>
-
-        <ImageWrapper
-          src={philharmonic}
-          alt={alt.philharmonic}
-          caption={caption.philharmonic}
-        />
-
-        <div className="w-full">
-          <Paragraph className={p} text={OP.first} />
-          <Paragraph className={p} text={OP.second} />
-          <Paragraph className={p} text={OP.third} />
-          <Paragraph className={p} text={OP.fourth} />
-        </div>
-
-        <SliderHistory
-          slides={sliderOne}
-          swiperId="first-theatre"
-          floatDirection="float-right"
-        />
-
-        <div className="w-full">
-          <Paragraph className={p} text={OP.fifth} />
-          <Paragraph className={p} text={OP.sixth} />
-          <Paragraph className={p} text={OP.seventh} />
-          <Paragraph className={p} text={OP.eighth} />
-        </div>
-      </div>
-      <ArrowUp />
-    </div>
-  );
+export default function Page() {
+  return <PhilharmonicClient />;
 }

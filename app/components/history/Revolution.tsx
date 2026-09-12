@@ -1,6 +1,7 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import { odessaHistory } from "@/lib/translations/history/index";
 import { imgСaption } from "@/lib/translations/history/imgСaption";
 import { imgAlt } from "@/lib/translations/history/imgAlt";
@@ -13,16 +14,17 @@ import universal from "@/img/history/revolution/universal.webp";
 import panteleimon_1906 from "@/img/history/revolution/panteleimon_1906.webp";
 
 export default function Revolution() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
+
+  const history = odessaHistory[currentLang] || odessaHistory.ua;
+  const caption = imgСaption[currentLang] || imgСaption.ua;
+  const alt = imgAlt[currentLang] || imgAlt.ua;
 
   const { french, bolshevik } = useAllImageSlides();
 
-  const history = odessaHistory[currentLang as keyof typeof odessaHistory];
-  const caption = imgСaption[currentLang as keyof typeof imgСaption];
-  const alt = imgAlt[currentLang as keyof typeof imgAlt];
-
   return (
-    <div className="w-full">
+    <div className="w-full min-w-0 overflow-hidden">
       <div className="clearfix">
         <SectionWrapper
           id_h2="revolution_title_1"
@@ -57,7 +59,7 @@ export default function Revolution() {
         <SectionWrapper
           id_h2="revolution_title_3"
           title={history.revolution_title_3}
-          paragraphs={[history.revolution_8]}
+          paragraphs={[]}
         />
 
         <ImageWrapper
@@ -68,9 +70,11 @@ export default function Revolution() {
 
         <SectionWrapper
           paragraphs={[
+            history.revolution_8,
             history.revolution_9,
             history.revolution_10,
             history.revolution_11,
+            history.revolution_12,
           ]}
         />
 
@@ -81,18 +85,16 @@ export default function Revolution() {
         />
 
         <SectionWrapper
-          paragraphs={[history.revolution_12, history.revolution_13]}
+          paragraphs={[
+            history.revolution_13,
+            history.revolution_14,
+            history.revolution_15,
+          ]}
         />
 
         <SliderHistory slides={bolshevik} swiperId="bolshevik" />
 
-        <SectionWrapper
-          paragraphs={[
-            history.revolution_14,
-            history.revolution_15,
-            history.revolution_16,
-          ]}
-        />
+        <SectionWrapper paragraphs={[history.revolution_16]} />
       </div>
     </div>
   );

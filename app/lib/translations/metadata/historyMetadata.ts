@@ -12,6 +12,3 @@ export const historyMetadata = {
     description: "Chronology of the city's history, key events, and epochs.",
   },
 };
-
-export type LangKey = keyof typeof historyMetadata;
-export const allowedLangs = Object.keys(historyMetadata) as LangKey[];

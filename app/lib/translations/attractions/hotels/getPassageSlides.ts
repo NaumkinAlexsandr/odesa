@@ -2,11 +2,11 @@
 import { IImagWrapper } from "@/type/interface";
 import { imgAlt, imgСaption } from "./passage";
 
-import one from "@/public/images/attractions/hotels/passage/passage-1.jpg";
-import two from "@/public/images/attractions/hotels/passage/passage-2.jpg";
-import three from "@/public/images/attractions/hotels/passage/passage-3.jpg";
-import four from "@/public/images/attractions/hotels/passage/passage-4.jpg";
-import five from "@/public/images/attractions/hotels/passage/passage-5.jpg";
+import one from "@/img/attractions/hotels/passage/passage-1.webp";
+import two from "@/img/attractions/hotels/passage/passage-2.webp";
+import three from "@/img/attractions/hotels/passage/passage-3.webp";
+import four from "@/img/attractions/hotels/passage/passage-4.webp";
+import five from "@/img/attractions/hotels/passage/passage-5.webp";
 
 export const getPassageSlides = (currentLang: string): IImagWrapper[] => {
   const alt = imgAlt[currentLang as keyof typeof imgAlt];

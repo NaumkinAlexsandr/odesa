@@ -71,6 +71,8 @@ export default function ImageWrapper({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
+  const zoomContainerRef = useRef<HTMLDivElement>(null);
+
   const { currentLang } = useLanguage();
   const lang = (
     currentLang in translations ? currentLang : "ua"
@@ -82,35 +84,53 @@ export default function ImageWrapper({
     setPosition({ x: 0, y: 0 });
   };
 
+  // Управление горячими клавишами и блокировка скролла body
   useEffect(() => {
+    if (!isFullscreen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setIsFullscreen(false);
         resetZoom();
       }
     };
-    if (isFullscreen) {
-      window.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden";
-    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = originalOverflow;
     };
   }, [isFullscreen]);
 
-  // Зум колесиком мыши
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    const zoomFactor = 0.25;
-    const delta = e.deltaY < 0 ? 1 + zoomFactor : 1 - zoomFactor;
-    const newScale = Math.min(Math.max(1, scale * delta), 6);
+  // Непассивный обработчик зума колесиком мыши (убирает консольные ошибки браузера)
+  useEffect(() => {
+    const container = zoomContainerRef.current;
+    if (!isFullscreen || !container) return;
 
-    setScale(newScale);
-    if (newScale === 1) {
-      setPosition({ x: 0, y: 0 });
-    }
-  };
+    const handleWheelNative = (e: WheelEvent) => {
+      e.preventDefault();
+      const zoomFactor = 0.25;
+      const delta = e.deltaY < 0 ? 1 + zoomFactor : 1 - zoomFactor;
+
+      setScale((prevScale) => {
+        const newScale = Math.min(Math.max(1, prevScale * delta), 6);
+        if (newScale === 1) {
+          setPosition({ x: 0, y: 0 });
+        }
+        return newScale;
+      });
+    };
+
+    container.addEventListener("wheel", handleWheelNative, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", handleWheelNative);
+    };
+  }, [isFullscreen]);
 
   // Перетаскивание мыши
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -131,7 +151,29 @@ export default function ImageWrapper({
     setIsDragging(false);
   };
 
-  // Двойной клик для быстрого зума
+  // Сенсорное перетаскивание (Mobile Touch)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (scale <= 1 || e.touches.length !== 1) return;
+    setIsDragging(true);
+    setDragStart({
+      x: e.touches[0].clientX - position.x,
+      y: e.touches[0].clientY - position.y,
+    });
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || scale <= 1 || e.touches.length !== 1) return;
+    setPosition({
+      x: e.touches[0].clientX - dragStart.x,
+      y: e.touches[0].clientY - dragStart.y,
+    });
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
+  // Двойной клик / тап для масштабирования
   const handleDoubleClick = () => {
     if (scale > 1) {
       resetZoom();
@@ -193,25 +235,25 @@ export default function ImageWrapper({
         </div>
       </div>
 
-      {/* Fullscreen Lightbox с зумом и скроллом */}
+      {/* Fullscreen Lightbox */}
       {isFullscreen && (
         <div
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-black/90 p-4 backdrop-blur-md select-none"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-white/10 p-4 backdrop-blur-md select-none"
           onClick={() => {
             setIsFullscreen(false);
             resetZoom();
           }}
         >
-          {/* Панель управления (кнопки закрытия и зума) */}
+          {/* Панель управления */}
           <div
             className="relative z-50 flex w-full max-w-4xl items-center justify-between pt-2"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-2 rounded-lg bg-white/10 p-1.5 backdrop-blur-md">
+            <div className="flex items-center gap-2 rounded-lg bg-zinc-300 p-1.5 backdrop-blur-md">
               <button
                 type="button"
                 onClick={() => setScale((s) => Math.min(s + 0.5, 6))}
-                className="cursor-pointer rounded-md px-2.5 py-1 text-sm font-bold text-white transition-colors hover:bg-white/20"
+                className="text-muted cursor-pointer rounded-md px-2.5 py-1 text-sm font-bold transition-colors hover:bg-white/20"
                 title="Zoom In"
               >
                 +
@@ -223,7 +265,7 @@ export default function ImageWrapper({
                   setScale(newS);
                   if (newS === 1) setPosition({ x: 0, y: 0 });
                 }}
-                className="cursor-pointer rounded-md px-2.5 py-1 text-sm font-bold text-white transition-colors hover:bg-white/20"
+                className="text-muted cursor-pointer rounded-md px-2.5 py-1 text-sm font-bold transition-colors hover:bg-white/20"
                 title="Zoom Out"
               >
                 −
@@ -232,7 +274,7 @@ export default function ImageWrapper({
                 <button
                   type="button"
                   onClick={resetZoom}
-                  className="cursor-pointer rounded-md border-l border-white/20 px-2.5 py-1 text-xs font-medium text-white/80 transition-colors hover:bg-white/20"
+                  className="text-muted cursor-pointer rounded-md border-l border-white/20 px-2.5 py-1 text-xs font-medium transition-colors hover:bg-white/20"
                 >
                   {t.reset} ({Math.round(scale * 100)}%)
                 </button>
@@ -246,7 +288,7 @@ export default function ImageWrapper({
                 resetZoom();
               }}
               aria-label={t.close}
-              className="cursor-pointer rounded-full bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-white/20"
+              className="text-muted cursor-pointer rounded-full bg-white/10 p-2 backdrop-blur-md transition-colors hover:bg-white/20"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -265,14 +307,17 @@ export default function ImageWrapper({
             </button>
           </div>
 
-          {/* Область изображения с зумом и перетаскиванием */}
+          {/* Область изображения */}
           <div
+            ref={zoomContainerRef}
             className="relative flex h-[78vh] w-full max-w-5xl items-center justify-center overflow-hidden"
-            onWheel={handleWheel}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             onDoubleClick={handleDoubleClick}
             onClick={(e) => e.stopPropagation()}
             style={{
@@ -298,7 +343,7 @@ export default function ImageWrapper({
             </div>
           </div>
 
-          {/* Подпись к карте */}
+          {/* Подпись к изображению */}
           {caption && (
             <div
               className="text-muted relative z-50 mx-auto w-full max-w-3xl pb-2 text-center text-[12px] md:text-[13px] lg:text-[14px]"

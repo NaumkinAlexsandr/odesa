@@ -2,11 +2,11 @@
 import { IImagWrapper } from "@/type/interface";
 import { imgAlt, imgСaption } from "./bristol";
 
-import two from "@/public/images/attractions/hotels/bristol/bristol-2.jpg";
-import three from "@/public/images/attractions/hotels/bristol/bristol-3.jpg";
-import four from "@/public/images/attractions/hotels/bristol/bristol-4.jpg";
-import five from "@/public/images/attractions/hotels/bristol/bristol-5.jpg";
-import six from "@/public/images/attractions/hotels/bristol/bristol-6.png";
+import two from "@/img/attractions/hotels/bristol/bristol-2.webp";
+import three from "@/img/attractions/hotels/bristol/bristol-3.webp";
+import four from "@/img/attractions/hotels/bristol/bristol-4.webp";
+import five from "@/img/attractions/hotels/bristol/bristol-5.webp";
+import six from "@/img/attractions/hotels/bristol/bristol-6.webp";
 
 export const getBristolSlides = (currentLang: string): IImagWrapper[] => {
   const alt = imgAlt[currentLang as keyof typeof imgAlt];

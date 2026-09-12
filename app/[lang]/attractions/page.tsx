@@ -1,40 +1,22 @@
-"use client";
-import React from "react";
-import Hotels from "@/attractions/Hotels";
-import Houses from "@/attractions/Houses";
-import Other from "@/attractions/Other";
-import Street from "@/attractions/Street";
-import Monuments from "@/attractions/Monuments";
-import Museum from "@/attractions/Museum";
-import Temples from "@/attractions/Temples";
-import Parks from "@/attractions/Parks";
-import Leisure from "@/attractions/Leisure";
-import Theaters from "@/attractions/Theaters";
-import SidebarAttractions from "@/attractions/SidebarAttractions";
-import ArrowUp from "@/components/common/ui/ArrowUp";
+import type { Metadata } from "next";
+import { attractionsMetadata } from "@/lib/translations/metadata/attractionsMetadata";
+import Attractions from "./Attractions";
 
-export default function Attractions() {
-  return (
-    <div className="w-full pt-15">
-      <div className="flex w-full flex-row justify-between">
-        <div className="mr-1 hidden lg:block lg:w-1/4">
-          <SidebarAttractions />
-        </div>
+type Props = {
+  params: Promise<{ lang: string }>;
+};
 
-        <div className="w-full lg:w-3/4">
-          <Theaters />
-          <Hotels />
-          <Museum />
-          <Temples />
-          <Parks />
-          <Leisure />
-          <Houses />
-          <Street />
-          <Monuments />
-          <Other />
-        </div>
-      </div>
-      <ArrowUp />
-    </div>
-  );
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const currentLang = (lang as "ua" | "ru" | "en") || "ua";
+  const meta = attractionsMetadata[currentLang] || attractionsMetadata.ua;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+  };
+}
+
+export default function AttractionsPage() {
+  return <Attractions />;
 }

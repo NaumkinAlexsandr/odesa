@@ -46,11 +46,3 @@ export const useLanguage = (): ILanguageHook => {
     createLocalizedPath,
   };
 };
-
-/*
-import { useLanguage } from "@/hooks/useLanguage";
-const { currentLang, langPrefix, isActive, createLocalizedPath } =
-    useLanguage();
-const text = eventText[currentLang as keyof typeof eventText];
-
-*/

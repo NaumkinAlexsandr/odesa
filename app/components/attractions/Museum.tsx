@@ -1,27 +1,22 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
-import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-import call from "@/images/icons/сardAttractions/call.png";
-// import info from "@/images/icons/сardAttractions/information.png";
-// import war from "@/images/icons/сardAttractions/war.png";
-import museumArt from "@/images/attractions/museums/museumArt.jpg";
-import museumWEArt from "@/images/attractions/museums/museumWEArt.jpg";
-import museumArchaeological from "@/images/attractions/museums/museumArchaeological.jpg";
+import { useParams } from "next/navigation";
+import AttractionsCard from "@/common/cards/AttractionsCard";
+import museumArt from "@/img/attractions/museums/museumArt/museumArt.webp";
+import museumWEArt from "@/img/attractions/museums/museumWEArt/museumWEArt.webp";
+import museumArchaeological from "@/img/attractions/museums/museumArchaeological/museumArchaeological.webp";
 import {
   museumsTranslations,
   sectionMuseums,
 } from "@/lib/translations/attractions/museums/museums";
 
 export default function Museum() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const museums =
-    museumsTranslations[currentLang as keyof typeof museumsTranslations];
-
-  const titleMuseums =
-    sectionMuseums[currentLang as keyof typeof sectionMuseums];
+  const museums = museumsTranslations[currentLang] || museumsTranslations.ua;
+  const titleMuseums = sectionMuseums[currentLang] || sectionMuseums.ua;
 
   return (
     <div id="museums" className="scroll-mt-[65px]">
@@ -34,16 +29,9 @@ export default function Museum() {
           descriptionP1={museums.museumArt.descriptionP1}
           imageSrc={museumArt}
           imagePosition="right"
-          gps={gps}
           address={museums.museumArt.address}
-          call={call}
           phoneNumber={museums.museumArt.phoneNumber}
           url={museums.museumArt.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={museums.museumArt.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={museums.museumArt.warInfo}
         />
 
         <AttractionsCard
@@ -51,16 +39,9 @@ export default function Museum() {
           descriptionP1={museums.museumArchaeological.descriptionP1}
           imageSrc={museumArchaeological}
           imagePosition="left"
-          gps={gps}
           address={museums.museumArchaeological.address}
-          call={call}
           phoneNumber={museums.museumArchaeological.phoneNumber}
           url={museums.museumArchaeological.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={museums.museumArchaeological.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={museums.museumArchaeological.warInfo}
         />
 
         <AttractionsCard
@@ -68,16 +49,9 @@ export default function Museum() {
           descriptionP1={museums.museumWEArt.descriptionP1}
           imageSrc={museumWEArt}
           imagePosition="right"
-          gps={gps}
           address={museums.museumWEArt.address}
-          call={call}
           phoneNumber={museums.museumWEArt.phoneNumber}
           url={museums.museumWEArt.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={museums.museumWEArt.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={museums.museumWEArt.warInfo}
         />
       </div>
     </div>

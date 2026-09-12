@@ -2,13 +2,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import translate from "@/images/icons/lang/translate.png";
-import uaInactive from "@/images/icons/lang/ukraine-white.png";
-import uaActive from "@/images/icons/lang/ukraine.png";
-import enInactive from "@/images/icons/lang/united-kingdom-white.png";
-import enActive from "@/images/icons/lang/united-kingdom.png";
-import ruInactive from "@/images/icons/lang/russia-white.png";
-import ruActive from "@/images/icons/lang/russia.png";
+import translate from "@/img/icons/lang/translate.png";
+import uaInactive from "@/img/icons/lang/ukraine-white.png";
+import uaActive from "@/img/icons/lang/ukraine.png";
+import enInactive from "@/img/icons/lang/united-kingdom-white.png";
+import enActive from "@/img/icons/lang/united-kingdom.png";
+import ruInactive from "@/img/icons/lang/russia-white.png";
+import ruActive from "@/img/icons/lang/russia.png";
 
 const flagImages = {
   ua: { inactive: uaInactive, active: uaActive },
@@ -38,7 +38,7 @@ export default function LangSwitcher({
         <Image src={translate} alt="translate" />
       </button>
       {isLangMenuOpen && (
-        <div className="absolute top-15 flex flex-col">
+        <div className="absolute top-15 z-50 flex flex-col">
           {languages.map((lang) => (
             <Link href={createLocalizedPath(lang)} key={lang}>
               <button className="h-8 w-8">

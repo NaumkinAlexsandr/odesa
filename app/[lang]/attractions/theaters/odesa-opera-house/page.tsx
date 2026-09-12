@@ -1,67 +1,32 @@
-"use client";
-import { useLanguage } from "@/hooks/useLanguage";
-import SliderHistory from "@/components/common/sliders/SliderHistory";
-import { h1_georgia, p } from "@/fonts/fontSize";
-import Paragraph from "@/ui/Paragraph";
-import ImageWrapper from "@/ui/ImageWrapper";
-import {
-  odesaOperaHouse,
-  imgAlt,
-  imgСaption,
-} from "@/lib/translations/attractions/theaters/odesa-opera-house";
-import { getOperaSlides } from "@/lib/translations/attractions/theaters/getOperaSlides";
-import secondTheatre from "@/public/images/attractions/theatre/opera/old_theatre.jpg";
-import ArrowUp from "@/components/common/ui/ArrowUp";
+import { Metadata } from "next";
+import OdesaOperaHouseClient from "./OdesaOperaHouseClient";
+import { odesaOperaHouse } from "@/lib/translations/attractions/theaters/odesa-opera-house";
 
-export default function OdesaOperaHouse() {
-  const { currentLang } = useLanguage();
+type Props = {
+  params: Promise<{ lang: string }>;
+};
 
-  const OOH = odesaOperaHouse[currentLang as keyof typeof odesaOperaHouse];
-  const alt = imgAlt[currentLang as keyof typeof imgAlt];
-  const caption = imgСaption[currentLang as keyof typeof imgСaption];
-  const { sliderOne, sliderTwo, sliderThree } = getOperaSlides(currentLang);
+// Динамическая генерация метаданных
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const currentLang = (lang as "ua" | "ru" | "en") || "ua";
+  const data = odesaOperaHouse[currentLang] || odesaOperaHouse.ua;
 
-  return (
-    <div className="w-full pt-15">
-      <div className="clearfix">
-        <h1 className={`${h1_georgia} my-2`}>{OOH.title}</h1>
-        <SliderHistory slides={sliderOne} swiperId="first-theatre" />
+  return {
+    title: `${data.title} — Пам'ятки Одеси`,
+    description: data.first
+      ? data.first.slice(0, 160)
+      : "Одеський національный академичний театр опери та балету.",
+    openGraph: {
+      title: data.title,
+      description: data.first
+        ? data.first.slice(0, 160)
+        : "Одеський театр опери та балету",
+      images: ["/images/attractions/theatre/opera/old_theatre.jpg"],
+    },
+  };
+}
 
-        <div className="w-full">
-          <Paragraph className={p} text={OOH.first} />
-          <Paragraph className={p} text={OOH.second} />
-          <Paragraph className={p} text={OOH.third} />
-        </div>
-
-        <ImageWrapper
-          src={secondTheatre}
-          alt={alt.old}
-          caption={caption.old}
-          floatDirection="float-right"
-        />
-
-        <div className="w-full">
-          <Paragraph className={p} text={OOH.fourth} />
-          <Paragraph className={p} text={OOH.fifth} />
-          <Paragraph className={p} text={OOH.sixth} />
-        </div>
-
-        <SliderHistory slides={sliderTwo} swiperId="new-theatre" />
-
-        <div className="w-full">
-          <Paragraph className={p} text={OOH.seventh} />
-          <Paragraph className={p} text={OOH.eighth} />
-        </div>
-
-        <SliderHistory slides={sliderThree} swiperId="inside-theatre" />
-
-        <div className="w-full">
-          <Paragraph className={p} text={OOH.ninth} />
-          <Paragraph className={p} text={OOH.tenth} />
-          <Paragraph className={p} text={OOH.eleventh} />
-        </div>
-      </div>
-      <ArrowUp />
-    </div>
-  );
+export default function Page() {
+  return <OdesaOperaHouseClient />;
 }

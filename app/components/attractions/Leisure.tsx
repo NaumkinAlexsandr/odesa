@@ -1,26 +1,21 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-import call from "@/images/icons/сardAttractions/call.png";
-// import info from "@/images/icons/сardAttractions/information.png";
-// import war from "@/images/icons/сardAttractions/war.png";
-import nemo from "@/images/attractions/leisure/nemo.jpeg";
-import arkadia from "@/images/attractions/leisure/arkadiaTwo.jpg";
+import nemo from "@/img/attractions/leisure/nemo/nemo.webp";
+import arkadia from "@/img/attractions/leisure/arkadia/arkadiaTwo.webp";
 import {
   leisuresTranslations,
   sectionLeisures,
 } from "@/lib/translations/attractions/leisure/leisure";
 
 export default function Leisure() {
-  const { currentLang } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const leisures =
-    leisuresTranslations[currentLang as keyof typeof leisuresTranslations];
-
-  const titleLeisures =
-    sectionLeisures[currentLang as keyof typeof sectionLeisures];
+  const leisures = leisuresTranslations[currentLang] || leisuresTranslations.ua;
+  const titleLeisures = sectionLeisures[currentLang] || sectionLeisures.ua;
 
   return (
     <div id="leisure" className="scroll-mt-[65px]">
@@ -34,16 +29,9 @@ export default function Leisure() {
           descriptionP2={leisures.nemo.descriptionP2}
           imageSrc={nemo}
           imagePosition="left"
-          gps={gps}
           address={leisures.nemo.address}
-          call={call}
           phoneNumber={leisures.nemo.phoneNumber}
           url={leisures.nemo.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={leisures.nemo.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={leisures.nemo.warInfo}
         />
 
         <AttractionsCard
@@ -51,14 +39,8 @@ export default function Leisure() {
           descriptionP1={leisures.arkadia.descriptionP1}
           imageSrc={arkadia}
           imagePosition="right"
-          gps={gps}
           address={leisures.arkadia.address}
           url={leisures.arkadia.urlGPS}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={leisures.arkadia.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={leisures.arkadia.warInfo}
         />
       </div>
     </div>

@@ -2,11 +2,11 @@
 import { IImagWrapper } from "@/type/interface";
 import { imgAlt, imgСaption } from "./moskovskaya";
 
-import two from "@/public/images/attractions/hotels/moskovskaya/moskovskaya-2.jpg";
-import three from "@/public/images/attractions/hotels/moskovskaya/moskovskaya-3.jpg";
-import four from "@/public/images/attractions/hotels/moskovskaya/moskovskaya-4.jpg";
-import five from "@/public/images/attractions/hotels/moskovskaya/moskovskaya-5.jpg";
-import six from "@/public/images/attractions/hotels/moskovskaya/moskovskaya-6.jpg";
+import two from "@/img/attractions/hotels/moskovskaya/moskovskaya-2.webp";
+import three from "@/img/attractions/hotels/moskovskaya/moskovskaya-3.webp";
+import four from "@/img/attractions/hotels/moskovskaya/moskovskaya-4.webp";
+import five from "@/img/attractions/hotels/moskovskaya/moskovskaya-5.webp";
+import six from "@/img/attractions/hotels/moskovskaya/moskovskaya-6.webp";
 
 export const getMoscowSlides = (currentLang: string): IImagWrapper[] => {
   const alt = imgAlt[currentLang as keyof typeof imgAlt];

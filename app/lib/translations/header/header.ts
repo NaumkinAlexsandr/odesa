@@ -4,22 +4,28 @@ export interface HeaderButton {
   history: string;
   news: string;
   events: string;
+  destruction: string; // <-- 1. Добавьте это свойство в интерфейс
 }
 
-export interface Header {
-  ua: { headerBtn: HeaderButton };
-  en: { headerBtn: HeaderButton };
-  ru: { headerBtn: HeaderButton };
-}
-
-export const header: Header = {
+export const header = {
   ua: {
     headerBtn: {
       home: "Головна",
-      attractions: "Пам'ятки",
+      attractions: "Визначні місця",
       history: "Історія",
       news: "Новини",
       events: "Події",
+      destruction: "Руйнування", // <-- 2. Добавьте перевод для UA
+    },
+  },
+  ru: {
+    headerBtn: {
+      home: "Главная",
+      attractions: "Достопримечательности",
+      history: "История",
+      news: "Новости",
+      events: "События",
+      destruction: "Разрушения", // <-- 2. Добавьте перевод для RU
     },
   },
   en: {
@@ -29,15 +35,7 @@ export const header: Header = {
       history: "History",
       news: "News",
       events: "Events",
-    },
-  },
-  ru: {
-    headerBtn: {
-      home: "Главная",
-      attractions: "Значимые места",
-      history: "История",
-      news: "Новости",
-      events: "События",
+      destruction: "Destruction", // <-- 2. Добавьте перевод для EN
     },
   },
 };

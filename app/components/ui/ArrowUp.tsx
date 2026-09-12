@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import arrow_up from "@/public/images/icons/arrow-up-2.png";
+import arrow_up from "@/img/icons/arrow-up-2.png";
 
 export default function ArrowUp() {
   const [isVisible, setIsVisible] = useState(false);

@@ -1,26 +1,21 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-import call from "@/images/icons/сardAttractions/call.png";
-import info from "@/images/icons/сardAttractions/information.png";
-import war from "@/images/icons/сardAttractions/war.png";
-import opera from "@/images/attractions/theatre/opera/opera.jpg";
-import philharmonic from "@/images/attractions/theatre/philharmonic/philharmonic_one.jpg";
+import opera from "@/img/attractions/theatre/opera/opera.webp";
+import philharmonic from "@/img/attractions/theatre/philharmonic/philharmonic_one.webp";
 import {
-  theatersTranslations,
   sectionTheaters,
+  theatersTranslations,
 } from "@/lib/translations/attractions/theaters/theaters";
 
 export default function Theaters() {
-  const { currentLang, langPrefix } = useLanguage();
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const theaters =
-    theatersTranslations[currentLang as keyof typeof theatersTranslations];
-
-  const titleTheaters =
-    sectionTheaters[currentLang as keyof typeof sectionTheaters];
+  const theaters = theatersTranslations[currentLang] || theatersTranslations.ua;
+  const titleTheaters = sectionTheaters[currentLang] || sectionTheaters.ua;
 
   return (
     <div id="theaters" className="scroll-mt-[65px]">
@@ -34,17 +29,11 @@ export default function Theaters() {
           descriptionP2={theaters.opera.descriptionP2}
           imageSrc={opera}
           imagePosition="left"
-          gps={gps}
           address={theaters.opera.address}
-          call={call}
           phoneNumber={theaters.opera.phoneNumber}
           url={theaters.opera.urlGPS}
-          info={info}
-          urlInfo={`${langPrefix}/attractions/theaters/odesa-opera-house`}
+          urlInfo={`/${currentLang}/attractions/theaters/odesa-opera-house`}
           moreInfo={theaters.opera.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
-          // warInfo={theaters.opera.warInfo}
         />
 
         <AttractionsCard
@@ -52,16 +41,12 @@ export default function Theaters() {
           descriptionP1={theaters.philharmonic.descriptionP1}
           imageSrc={philharmonic}
           imagePosition="right"
-          gps={gps}
           address={theaters.philharmonic.address}
-          call={call}
           phoneNumber={theaters.philharmonic.phoneNumber}
           url={theaters.philharmonic.urlGPS}
-          info={info}
-          urlInfo={`${langPrefix}/attractions/theaters/odesa-philharmonic`}
+          urlInfo={`/${currentLang}/attractions/theaters/odesa-philharmonic`}
           moreInfo={theaters.philharmonic.moreInfo}
-          war={war}
-          warURl={`${langPrefix}/destruction/philharmonic-hall-strike`}
+          warURl={`/${currentLang}/destruction/philharmonic-hall-strike`}
           warInfo={theaters.philharmonic.warInfo}
         />
       </div>

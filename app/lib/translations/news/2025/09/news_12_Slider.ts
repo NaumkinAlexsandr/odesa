@@ -1,12 +1,12 @@
-import one from "@/images/news/09.2025/news_12.09.25/128721.jpeg";
-import two from "@/images/news/09.2025/news_12.09.25/128723.jpeg";
-import three from "@/images/news/09.2025/news_12.09.25/128740.jpeg";
-import four from "@/images/news/09.2025/news_12.09.25/128751.jpeg";
-import five from "@/images/news/09.2025/news_12.09.25/128753.jpeg";
-import six from "@/images/news/09.2025/news_12.09.25/128763.jpeg";
-import seven from "@/images/news/09.2025/news_12.09.25/128770.jpeg";
-import eight from "@/images/news/09.2025/news_12.09.25/128778.jpeg";
-import nine from "@/images/news/09.2025/news_12.09.25/128779.jpeg";
+import one from "@/img/news/09.2025/news_12.09.25/128721.webp";
+import two from "@/img/news/09.2025/news_12.09.25/128723.webp";
+import three from "@/img/news/09.2025/news_12.09.25/128740.webp";
+import four from "@/img/news/09.2025/news_12.09.25/128751.webp";
+import five from "@/img/news/09.2025/news_12.09.25/128753.webp";
+import six from "@/img/news/09.2025/news_12.09.25/128763.webp";
+import seven from "@/img/news/09.2025/news_12.09.25/128770.webp";
+import eight from "@/img/news/09.2025/news_12.09.25/128778.webp";
+import nine from "@/img/news/09.2025/news_12.09.25/128779.webp";
 import { ContentSliderType } from "@/type/content";
 import { StaticImageData } from "next/image";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Paragraph from "@/ui/Paragraph";
 import { p } from "@/fonts/fontSize";
-import List from "@/components/common/ui/List";
+import List from "@/ui/List";
 import { IContentTranslation } from "@/type/content";
 
 /**

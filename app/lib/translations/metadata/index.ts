@@ -1,18 +1,38 @@
-import { homeMetadata } from "./homeMetadata";
 import { historyMetadata } from "./historyMetadata";
+import { destructionMetadata } from "./destructionMetadata";
+import { currencyMetadata } from "./currencyMetadata";
+import { eventsMetadata } from "./eventsMetadata";
+import { attractionsMetadata } from "./attractionsMetadata";
+import { homeMetadata } from "./homeMetadata";
+import { newsMetadata } from "./newsMetadata";
 
 export const metadataTranslations = {
   ua: {
-    ...homeMetadata.ua,
-    ...historyMetadata.ua,
+    home: homeMetadata.ua,
+    history: historyMetadata.ua,
+    destruction: destructionMetadata.ua,
+    currency: currencyMetadata.ua,
+    event: eventsMetadata.ua,
+    attractions: attractionsMetadata.ua,
+    news: newsMetadata.ua,
   },
   ru: {
-    ...homeMetadata.ru,
-    ...historyMetadata.ru,
+    home: homeMetadata.ru,
+    history: historyMetadata.ru,
+    destruction: destructionMetadata.ru,
+    currency: currencyMetadata.ru,
+    event: eventsMetadata.ru,
+    attractions: attractionsMetadata.ru,
+    news: newsMetadata.ru,
   },
   en: {
-    ...homeMetadata.en,
-    ...historyMetadata.en,
+    home: homeMetadata.en,
+    history: historyMetadata.en,
+    destruction: destructionMetadata.en,
+    currency: currencyMetadata.en,
+    event: eventsMetadata.en,
+    attractions: attractionsMetadata.en,
+    news: newsMetadata.en,
   },
 };
 

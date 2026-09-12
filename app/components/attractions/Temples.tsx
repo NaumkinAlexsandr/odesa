@@ -1,69 +1,47 @@
 "use client";
+
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useParams } from "next/navigation";
 import AttractionsCard from "@/components/common/cards/AttractionsCard";
-import gps from "@/images/icons/сardAttractions/gps.png";
-import call from "@/images/icons/сardAttractions/call.png";
-// import info from "@/images/icons/сardAttractions/information.png";
-import war from "@/images/icons/сardAttractions/war.png";
-import preobrajenskiy from "@/images/attractions/temples/preobrajenskiy/preobrajenskiy.jpg";
-import uspenskiy from "@/images/attractions/temples/uspenskiy/uspenskiy.jpg";
+import streetDeribasovskaya from "@/img/attractions/streets/deribasovskaya/streetDeribasovskaya.webp";
+import streetPrimorskiy from "@/img/attractions/streets/primorskiy/streetPrimorskiy.webp";
 import {
-  sectionTemples,
-  templesTranslations,
-} from "@/lib/translations/attractions/temples/temples";
+  sectionStreets,
+  streetsTranslations,
+} from "@/lib/translations/attractions/streets/streets";
 
-export default function Temples() {
-  const { currentLang, langPrefix } = useLanguage();
+export default function Street() {
+  const params = useParams();
+  const currentLang = (params?.lang as "ua" | "ru" | "en") || "ua";
 
-  const temples =
-    templesTranslations[currentLang as keyof typeof templesTranslations];
+  const streets = streetsTranslations[currentLang] || streetsTranslations.ua;
 
-  const titleTemples =
-    sectionTemples[currentLang as keyof typeof sectionTemples];
+  const titleStreets = sectionStreets[currentLang] || sectionStreets.ua;
 
   return (
-    <div id="temples" className="scroll-mt-[65px]">
+    <div id="streets" className="scroll-mt-[65px]">
       <h2 className="my-1 text-center text-2xl font-bold">
-        {titleTemples.sectionName}
+        {titleStreets.sectionName}
       </h2>
       <div className="flex flex-col space-y-4">
         <AttractionsCard
-          title={temples.preobrajenskiy.title}
-          descriptionP1={temples.preobrajenskiy.descriptionP1}
-          descriptionP2={temples.preobrajenskiy.descriptionP2}
-          imageSrc={preobrajenskiy}
+          title={streets.streetDeribasovskaya.title}
+          descriptionP1={streets.streetDeribasovskaya.descriptionP1}
+          descriptionP2={streets.streetDeribasovskaya.descriptionP2}
+          imageSrc={streetDeribasovskaya}
           imagePosition="left"
-          gps={gps}
-          address={temples.preobrajenskiy.address}
-          call={call}
-          phoneNumber={temples.preobrajenskiy.phoneNumber}
-          url={temples.preobrajenskiy.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/attractions`}
-          // moreInfo={temples.preobrajenskiy.moreInfo}
-          war={war}
-          warURl={`${langPrefix}/destruction/missile-strike-on-the-transfiguration-cathedral`}
-          warInfo={temples.preobrajenskiy.warInfo}
+          address={streets.streetDeribasovskaya.address}
+          url={streets.streetDeribasovskaya.urlGPS}
         />
 
         <AttractionsCard
-          title={temples.uspenskiy.title}
-          descriptionP1={temples.uspenskiy.descriptionP1}
-          descriptionP2={temples.uspenskiy.descriptionP2}
-          imageSrc={uspenskiy}
+          title={streets.streetPrimorskiy.title}
+          descriptionP1={streets.streetPrimorskiy.descriptionP1}
+          descriptionP2={streets.streetPrimorskiy.descriptionP2}
+          imageSrc={streetPrimorskiy}
           imagePosition="right"
-          gps={gps}
-          address={temples.uspenskiy.address}
-          call={call}
-          phoneNumber={temples.uspenskiy.phoneNumber}
-          url={temples.uspenskiy.urlGPS}
-          // info={info}
-          // urlInfo={`${langPrefix}/history`}
-          // moreInfo={temples.uspenskiy.moreInfo}
-          // war={war}
-          // warURl={`${langPrefix}/destruction/`}
-          // warInfo={temples.uspenskiy.warInfo}
+          address={streets.streetPrimorskiy.address}
+          url={streets.streetPrimorskiy.urlGPS}
         />
       </div>
     </div>

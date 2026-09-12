@@ -1,18 +1,18 @@
-import acdc from "@/images/events/acdc.png";
-import alisaVKraineChudes from "@/images/events/alisa-v-kraine-chudes.png";
-import bohemianUk from "@/images/events/bohemian-uk.png";
-import drakulaVlad from "@/images/events/drakula-vlad.png";
-import festivalChor from "@/images/events/festival-chor.png";
-import kanotopskaVedma from "@/images/events/kanotopska-vedma.png";
-import kazka from "@/images/events/kazka.png";
-import kozlovsky from "@/images/events/kozlovsky.png";
-import ladiesNight from "@/images/events/ladies-night.png";
-import number13 from "@/images/events/number-13.png";
-import poizdOdesaMama from "@/images/events/poizd-odesa-mama.png";
-import rebeliya from "@/images/events/rebeliya.png";
-import stingTribute from "@/images/events/sting-tribute.png";
-import troePorosyat from "@/images/events/troe-porosyat.png";
-import vivienneQuartet from "@/images/events/vivienne-quartet.png";
+import acdc from "@/img/events/acdc.webp";
+import alisaVKraineChudes from "@/img/events/alisa-v-kraine-chudes.webp";
+import bohemianUk from "@/img/events/bohemian-uk.webp";
+import drakulaVlad from "@/img/events/drakula-vlad.webp";
+import festivalChor from "@/img/events/festival-chor.webp";
+import kanotopskaVedma from "@/img/events/kanotopska-vedma.webp";
+import kazka from "@/img/events/kazka.webp";
+import kozlovsky from "@/img/events/kozlovsky.webp";
+import ladiesNight from "@/img/events/ladies-night.webp";
+import number13 from "@/img/events/number-13.webp";
+import poizdOdesaMama from "@/img/events/poizd-odesa-mama.webp";
+import rebeliya from "@/img/events/rebeliya.webp";
+import stingTribute from "@/img/events/sting-tribute.webp";
+import troePorosyat from "@/img/events/troe-porosyat.webp";
+import vivienneQuartet from "@/img/events/vivienne-quartet.webp";
 
 export const imgEvents = {
   acdc: acdc,

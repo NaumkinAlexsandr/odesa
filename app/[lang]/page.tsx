@@ -1,14 +1,27 @@
+import type { Metadata } from "next";
+import { homeMetadata } from "@/lib/translations/metadata/homeMetadata";
 import SliderHome from "@/homePage/SliderHome";
 import Exchange from "@/homePage/Exchange";
 import WeatherDisplay from "@/homePage/Weather";
 import EventAnnouncement from "@/components/homePage/EventAnnouncement";
 import NewsAnnouncement from "@/components/homePage/NewsAnnouncement";
 import DestructionAnnouncement from "@/components/homePage/DestructionAnnouncement";
+import { Props } from "@/type/interface";
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const currentLang = (lang as "ua" | "ru" | "en") || "ua";
+  const meta = homeMetadata[currentLang] || homeMetadata.ua;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+  };
+}
 
 export default async function Home() {
   const barCol =
     "p-2 hidden items-center justify-center md:flex md:w-[250px] lg:flex lg:w-[250px] ";
-
   const announcement = `flex w-full flex-col items-center justify-items-center gap-2`;
 
   return (

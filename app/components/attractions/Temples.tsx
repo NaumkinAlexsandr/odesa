@@ -19,7 +19,7 @@ export default function Street() {
   const titleStreets = sectionStreets[currentLang] || sectionStreets.ua;
 
   return (
-    <div id="streets" className="scroll-mt-[65px]">
+    <div id="temples" className="scroll-mt-[65px]">
       <h2 className="my-1 text-center text-2xl font-bold">
         {titleStreets.sectionName}
       </h2>

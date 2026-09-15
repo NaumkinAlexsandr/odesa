@@ -26,10 +26,10 @@ export async function generateMetadata({
 
   return {
     title: {
-      default: current.title,
+      default: current.home.title,
       template: `%s`,
     },
-    description: current.description,
+    description: current.home.description,
   };
 }
 

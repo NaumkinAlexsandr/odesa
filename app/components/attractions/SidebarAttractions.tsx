@@ -100,20 +100,21 @@ export default function SidebarAttractions() {
         )}
 
         {/* Выезжающая панель */}
+        {/* Выезжающая панель */}
         <div
-          className={`fixed top-0 left-0 z-[100] flex h-full w-[280px] flex-col bg-white p-4 shadow-2xl transition-transform duration-300 ease-in-out dark:bg-zinc-900 ${
+          className={`fixed top-0 left-0 z-[100] flex h-full w-[280px] flex-col bg-white p-4 shadow-2xl transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           {/* Шапка панели */}
-          <div className="mb-3 flex items-center justify-between border-b border-zinc-200 pb-3 dark:border-zinc-800">
-            <span className="text-base font-bold text-zinc-900 dark:text-zinc-100">
+          <div className="mb-3 flex items-center justify-between border-b border-zinc-200 pb-3">
+            <span className="text-base font-bold text-zinc-900">
               {sectionName.title}
             </span>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="rounded-lg p-1.5 text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+              className="rounded-lg p-1.5 text-zinc-500 hover:bg-zinc-100"
               aria-label="Закрыть"
             >
               <svg

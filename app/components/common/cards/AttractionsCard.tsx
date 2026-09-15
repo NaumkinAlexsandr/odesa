@@ -56,7 +56,7 @@ export default function AttractionsCard({
 
   return (
     <div className="clearfix my-2">
-      <div className="overflow-hidden rounded-lg border border-zinc-300 bg-white p-4 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
+      <div className="bg-card overflow-hidden rounded-lg border border-zinc-300 p-4 shadow-lg">
         <div className={`${floatClass} mb-4 w-full md:w-1/2 lg:w-1/2`}>
           <Image
             src={imageSrc}
@@ -67,18 +67,16 @@ export default function AttractionsCard({
         </div>
 
         <div className="w-full">
-          <h2 className={`${h1_georgia} mb-2 text-zinc-900 dark:text-zinc-100`}>
-            {title}
-          </h2>
+          <h2 className={`${h1_georgia} text-foreground mb-2`}>{title}</h2>
 
           <Paragraph
-            className={`${p} h-auto text-zinc-700 dark:text-zinc-300`}
+            className={`${p} text-foreground h-auto`}
             text={descriptionP1}
           />
 
           {descriptionP2 && (
             <Paragraph
-              className={`${p} h-auto text-zinc-700 dark:text-zinc-300`}
+              className={`${p} text-foreground h-auto`}
               text={descriptionP2}
             />
           )}

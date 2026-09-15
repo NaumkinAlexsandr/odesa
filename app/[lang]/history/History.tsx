@@ -9,19 +9,17 @@ import Revolution from "@/history/Revolution";
 import WorldWarTwo from "@/history/WorldWarTwo";
 import Ussr from "@/history/Ussr";
 import ModernUA from "@/history/ModernUA";
-import SidebarHystory from "@/history/SidebarHystory";
 import ArrowUp from "@/ui/ArrowUp";
+import SidebarHistory from "@/components/history/SidebarHystory";
 
 export default function History() {
   return (
-    <div className="w-full pt-8 lg:pt-16">
+    <div className="w-full pt-14 lg:pt-8">
       <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
-        {/* Сайдбар */}
         <aside className="w-full">
-          <SidebarHystory />
+          <SidebarHistory />
         </aside>
 
-        {/* Основной контент */}
         <main className="w-full min-w-0 overflow-hidden">
           <Ancient />
           <Kotsyubiev />

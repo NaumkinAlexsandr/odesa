@@ -16,8 +16,7 @@ import ArrowUp from "@/ui/ArrowUp";
 
 export default function Attractions() {
   return (
-    // Увеличен pt-16 для мобильных, чтобы не заходить под fixed header
-    <div className="w-full pt-16 lg:pt-8">
+    <div className="w-full pt-8 lg:pt-16">
       <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
         <aside className="w-full">
           <SidebarAttractions />

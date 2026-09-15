@@ -78,7 +78,7 @@ export default function SidebarAttractions() {
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="fixed top-1/2 left-0 z-30 flex -translate-y-1/2 items-center justify-center rounded-r-xl border border-l-0 border-zinc-200 bg-white/80 p-1.5 shadow-md backdrop-blur-sm transition-transform active:scale-90 dark:border-zinc-800 dark:bg-zinc-900/80"
+          className="bg-card fixed top-1/2 left-0 z-30 flex -translate-y-1/2 items-center justify-center rounded-r-xl border border-l-0 border-zinc-200 p-1.5 shadow-md backdrop-blur-sm transition-transform active:scale-90"
           aria-label={sectionName.title}
           title={sectionName.title}
         >
@@ -100,7 +100,6 @@ export default function SidebarAttractions() {
         )}
 
         {/* Выезжающая панель */}
-        {/* Выезжающая панель */}
         <div
           className={`fixed top-0 left-0 z-[100] flex h-full w-[280px] flex-col bg-white p-4 shadow-2xl transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "-translate-x-full"
@@ -108,13 +107,13 @@ export default function SidebarAttractions() {
         >
           {/* Шапка панели */}
           <div className="mb-3 flex items-center justify-between border-b border-zinc-200 pb-3">
-            <span className="text-base font-bold text-zinc-900">
+            <span className="text-muted text-base font-bold">
               {sectionName.title}
             </span>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="rounded-lg p-1.5 text-zinc-500 hover:bg-zinc-100"
+              className="text-muted rounded-lg p-1.5 hover:bg-zinc-100"
               aria-label="Закрыть"
             >
               <svg

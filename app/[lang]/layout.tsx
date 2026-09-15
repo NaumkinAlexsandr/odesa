@@ -43,18 +43,18 @@ export default async function RootLayout({
   const resolvedParams = await params;
   const lang = resolvedParams.lang;
   const currentLang = getCleanLang(lang);
-
-  // Задаем тему по умолчанию (можно позже расширить чтением из cookies)
   const currentTheme = "light";
 
   return (
     <html lang={currentLang} className="light" suppressHydrationWarning>
       <body
-        className={` ${georgia.variable} ${caveat.variable} ${greatVibes.variable} flex min-h-screen flex-col scroll-smooth font-sans antialiased`}
+        className={`${georgia.variable} ${caveat.variable} ${greatVibes.variable} flex min-h-screen w-full flex-col overflow-x-hidden scroll-smooth font-sans antialiased`}
       >
         <AppStoreProvider theme={currentTheme} lang={currentLang}>
           <Header />
-          <main className="layout-container">{children}</main>
+          <main className="layout-container w-full min-w-0 flex-1">
+            {children}
+          </main>
           <Footer />
         </AppStoreProvider>
       </body>

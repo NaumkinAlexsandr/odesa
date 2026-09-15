@@ -21,35 +21,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Home() {
   const barCol =
-    "p-2 hidden items-center justify-center md:flex md:w-[250px] lg:flex lg:w-[250px] ";
-  const announcement = `flex w-full flex-col items-center justify-items-center gap-2`;
+    "p-2 hidden items-center justify-center md:flex md:w-[250px] shrink-0";
+  const announcement = "flex w-full min-w-0 flex-col items-center gap-2";
 
   return (
-    <div className="flex w-full flex-col gap-y-2 pt-15">
+    // Заменили pt-15 на pt-16 и добавили overflow-hidden
+    <div className="flex w-full max-w-full flex-col gap-y-4 overflow-x-hidden pt-16">
       <SliderHome />
 
-      <div className="flex w-full items-center justify-center gap-2">
+      <div className="flex w-full items-start justify-center gap-2 px-2">
         <div className={announcement}>
           <NewsAnnouncement />
           <EventAnnouncement />
         </div>
 
-        <div className={`${barCol}`}>
+        <div className={barCol}>
           <WeatherDisplay />
         </div>
       </div>
 
-      <div className="flex w-full items-center justify-center gap-2 p-2">
-        <div className={`${announcement} w-full justify-self-center`}>
+      <div className="flex w-full items-start justify-center gap-2 p-2">
+        <div className={announcement}>
           <DestructionAnnouncement />
         </div>
 
-        <div className={`${barCol}`}>
+        <div className={barCol}>
           <Exchange />
         </div>
       </div>
-
-      <div className=""></div>
     </div>
   );
 }

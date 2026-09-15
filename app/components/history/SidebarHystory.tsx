@@ -72,20 +72,20 @@ export default function SidebarHistory() {
 
       {/* Мобильная версия */}
       <div className="lg:hidden">
-        {/* Кнопка открытия */}
+        {/* Кнопка открытия: уменьшен размер и добавлена прозрачность, чтобы меньше перекрывать текст */}
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="fixed top-1/2 left-0 z-40 flex -translate-y-1/2 items-center justify-center rounded-r-full border border-l-0 border-zinc-200 bg-white/90 p-2 shadow-lg backdrop-blur-md transition-all hover:bg-white hover:px-3 active:scale-95 dark:border-zinc-800 dark:bg-zinc-900/90 dark:hover:bg-zinc-900"
+          className="fixed top-1/2 left-0 z-30 flex -translate-y-1/2 items-center justify-center rounded-r-xl border border-l-0 border-zinc-200 bg-white/80 p-1.5 shadow-md backdrop-blur-sm transition-transform active:scale-90 dark:border-zinc-800 dark:bg-zinc-900/80"
           aria-label={sectionName.title}
           title={sectionName.title}
         >
           <Image
             src={right}
             alt={sectionName.title || "Next"}
-            width={28}
-            height={28}
-            className="h-7 w-7 object-contain"
+            width={20}
+            height={20}
+            className="h-5 w-5 object-contain opacity-70"
           />
         </button>
 
@@ -99,13 +99,13 @@ export default function SidebarHistory() {
 
         {/* Выезжающая панель */}
         <div
-          className={`fixed top-0 left-0 z-[100] h-full w-[290px] bg-white p-4 shadow-2xl transition-transform duration-300 ease-in-out dark:bg-zinc-900 ${
+          className={`fixed top-0 left-0 z-[100] flex h-full w-[280px] flex-col bg-white p-4 shadow-2xl transition-transform duration-300 ease-in-out dark:bg-zinc-900 ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           {/* Шапка панели */}
           <div className="mb-3 flex items-center justify-between border-b border-zinc-200 pb-3 dark:border-zinc-800">
-            <span className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+            <span className="text-base font-bold text-zinc-900 dark:text-zinc-100">
               {sectionName.title}
             </span>
             <button
@@ -116,7 +116,7 @@ export default function SidebarHistory() {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -131,11 +131,8 @@ export default function SidebarHistory() {
             </button>
           </div>
 
-          {/* Растянутый контейнер списка */}
-          <div
-            className="h-[calc(100vh-80px)] w-full overflow-y-auto [&_nav]:w-full [&_ul]:w-full [&>div]:w-full"
-            onClick={handleNavClick}
-          >
+          {/* Контейнер списка со скроллом */}
+          <div className="flex-1 overflow-y-auto" onClick={handleNavClick}>
             <Sidebar sections={historySections} title="" />
           </div>
         </div>
